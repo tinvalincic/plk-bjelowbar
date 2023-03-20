@@ -164,21 +164,30 @@ export default function Home() {
                 <summary>Kako će nagrada biti isplaćena?</summary>
                 <p>
                   Nagrade će biti isplaćene na SuperSport{" "}
-                  <a href="https://www.supersport.hr/sportcard">SportCard</a>{" "}
+                  <a href="https://www.supersport.hr/sportcard" target="_blank">
+                    SportCard
+                  </a>{" "}
                   karticu. SportCard kartica je besplatna Mastercard prepaid
                   kartica koju izdaje{" "}
-                  <a href="https://aircash.eu/hr/">aircash</a>. Upute kako
-                  zatražiti SportCard karticu možete pronaći{" "}
-                  <a href="https://www.supersport.hr/sportcard">ovdje</a>, a
-                  nagrađenim natjecateljima (odnosno njihovim roditeljima ili
-                  skrbnicima ukoliko je natjecatelj maloljetnik) poslat ćemo
+                  <a href="https://aircash.eu/hr/" target="_blank">
+                    aircash
+                  </a>
+                  . Upute kako zatražiti SportCard karticu možete pronaći{" "}
+                  <a href="https://www.supersport.hr/sportcard" target="_blank">
+                    ovdje
+                  </a>
+                  , a nagrađenim natjecateljima (odnosno njihovim roditeljima
+                  ili skrbnicima ukoliko je natjecatelj maloljetnik) poslat ćemo
                   upute nakon završetka natjecanja.
                   <br />
                   Sa SportCard karticom možete plaćati bilo gdje bez naknade, a
                   za prebacivanje sredstava na svoj račun ili isplatu na PBZ
                   bankomatu plaća se 2% naknade. Ostale mogućnosti i naknade
                   možete provjeriti{" "}
-                  <a href="https://aircash.eu/hr/naknade/">ovdje</a>.
+                  <a href="https://aircash.eu/hr/naknade/" target="_blank">
+                    ovdje
+                  </a>
+                  .
                 </p>
               </details>
               <details>

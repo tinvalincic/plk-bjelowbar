@@ -1,0 +1,358 @@
+.banner {
+  min-height: 100vh;
+  background-image: url('/banner.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.bannerContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  width: 100vw;
+}
+
+.bannerTitleTop {
+  font-size: 5.7rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  line-height: 6rem;
+  letter-spacing: 6px;
+  transform: translateY(0px);
+  transition: 0.3s ease;
+  animation: titleTop 0.5s ease-in-out;
+}
+
+.titleTopWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerTitleBottom {
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  font-size: 7rem;
+  font-style: italic;
+  margin-top: 0px;
+  line-height: 6rem;
+  letter-spacing: -1px;
+  opacity: 0;
+}
+
+.animateBottom {
+  opacity: 1;
+  animation: flashWhite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  text-shadow: 0 0 0px #fff;
+}
+
+.date {
+  position: relative;
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-top: 20px;
+  opacity: 0;
+}
+
+.animateDate {
+  opacity: 1;
+  animation: date 0.5s ease-in-out;
+}
+
+.date::before,
+.date::after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.date::before {
+  right: 180px;
+}
+
+.date::after {
+  left: 180px;
+}
+
+.animateDate::after,
+.animateDate::before {
+  opacity: 1;
+  animation: after 0.5s ease-in-out;
+}
+
+.section {
+  text-align: center;
+  padding: 100px 0px;
+  position: relative;
+}
+
+.fog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("/fog.png");
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.3;
+  background-position: center;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.section p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.apsoluteAwards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 80%;
+  margin: 40px auto;
+}
+
+.fond {
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  font-size: 7rem;
+  color: var(--color-yellow);
+  text-shadow: 0 0 10px var(--color-yellow);
+}
+
+.medal {
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+}
+
+.amount {
+  font-size: 4.7rem;
+  line-height: 4rem;
+  font-weight: 800;
+  font-family: 'Teko', sans-serif;
+  color: var(--color-yellow);
+  text-shadow: 0 0 6px var(--color-yellow);
+}
+
+.sectionTitle {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;
+  line-height: 2rem;
+  margin-bottom: 30px;
+  color: var(--color-yellow);
+}
+
+.pravila {
+  text-align: left;
+}
+
+.pravila p,
+.pravila li {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.pravila ul {
+  padding-left: 15px;
+}
+
+.pravila li {
+  margin-bottom: 5px;
+}
+
+.subheading {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  font-family: 'Teko', sans-serif;
+  color: var(--color-yellow);
+  font-size: 1.6rem;
+  margin-top: 25px;
+}
+
+.recordsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+p.legenda {
+  font-size: 0.8rem;
+}
+
+.faqSection {
+  padding: 0px 0px 100px;
+}
+
+.faqContent {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.faqContent details {
+  margin-bottom: 10px;
+}
+
+.faqContent summary {
+  width: 100%;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+.faqContent p {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  padding: 15px;
+}
+
+.faqContent a {
+  color: var(--color-yellow);
+  text-decoration: underline;
+}
+
+@keyframes flashWhite {
+  0% {
+    text-shadow: 0 0 0px #fff;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px #fff;
+  }
+
+  100% {
+    text-shadow: 0 0 0px #fff;
+  }
+}
+
+@keyframes titleTop {
+  0% {
+    transform: translateY(-90px);
+  }
+
+  60% {
+    transform: translateY(-90px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes date {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes after {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bannerTitleTop {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+
+  .bannerTitleBottom {
+    font-size: 3rem;
+    line-height: 3.4rem;
+  }
+
+  .date {
+    font-size: 1rem;
+  }
+
+  .date::before,
+  .date::after {
+    width: 80px;
+  }
+
+  .date::before {
+    right: 140px;
+  }
+
+  .date::after {
+    left: 140px;
+  }
+
+  .apsoluteAwards {
+    width: 100%;
+  }
+
+  .medal {
+    font-size: 1.5rem;
+  }
+
+  .amount {
+    font-size: 2.7rem;
+    line-height: 2.8rem;
+  }
+
+  .recordsGrid {
+    display: block;
+  }
+
+  .faqContent {
+    width: auto;
+    margin: 0 -15px;
+  }
+
+  .faqContent details {
+    margin-bottom: 0px;
+  }
+
+  .faqContent summary {
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .faqContent summary:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  @keyframes after {
+    0% {
+      width: 0px;
+    }
+
+    100% {
+      width: 80px;
+    }
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .banner {
+    background-attachment: initial;
+  }
+}

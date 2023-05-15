@@ -1634,7 +1634,7 @@ export const allCompetitors = [
     __1: "",
     __2: 1,
     __3: "ILIJA",
-    "BJELOVAR POWERLIFTING 03.06-04.06.2023.": "PERTOVIĆ",
+    "BJELOVAR POWERLIFTING 03.06-04.06.2023.": "PETROVIĆ",
     __4: 1999,
     __5: "OSIJEK 031",
     __6: 812.5,

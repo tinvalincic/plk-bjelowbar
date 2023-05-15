@@ -2,16 +2,19 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
 import { recordsMen, recordsWomen } from "@/lib/records";
+import { competitors } from "@/lib/competitors";
 import { RecordsTable } from "@/components/RecordsTable";
-
-export const classnames = (...args) => args.join(" ");
+import { Groups } from "@/components/Groups";
+import { classnames } from "@/lib/util";
 
 export default function Home() {
   const [bottomClasses, setBottomClasses] = useState([
     styles.bannerTitleBottom,
   ]);
   const [dateClasses, setDateClasses] = useState([styles.date]);
+  const [buttonClasses, setButtonClasses] = useState([styles.bannerButton]);
   const initialized = useRef(false);
+  const nominations = useRef(null);
 
   useEffect(() => {
     if (initialized.current) return;
@@ -23,7 +26,15 @@ export default function Home() {
     setTimeout(() => {
       setDateClasses([styles.date, styles.animateDate]);
     }, 2500);
+
+    setTimeout(() => {
+      setButtonClasses([styles.bannerButton, styles.animateButton]);
+    }, 3000);
   }, []);
+
+  const goToNominations = () => {
+    nominations.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -42,6 +53,12 @@ export default function Home() {
             </div>
             <h1 className={bottomClasses.join(" ")}>Record Breakers</h1>
             <p className={dateClasses.join(" ")}>3. - 4. lipnja 2023.</p>
+            <button
+              className={buttonClasses.join(" ")}
+              onClick={goToNominations}
+            >
+              Pogledaj nominacije
+            </button>
           </div>
         </section>
         <section className={styles.section}>
@@ -78,6 +95,12 @@ export default function Home() {
               Nagradni fond za obaranje seniorskih državnih rekorda* iznosit će:
             </p>
             <div className={styles.fond}>1500 €</div>
+          </div>
+        </section>
+        <section className={styles.section} ref={nominations}>
+          <div className="container">
+            <h1 className={styles.sectionTitle}>Nominacije, grupe i satnica</h1>
+            <Groups genderTables={competitors} />
           </div>
         </section>
         <section className={classnames(styles.section, styles.pravila)}>

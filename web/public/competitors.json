@@ -1,0 +1,65 @@
+[
+  {
+    "KATEGORIJA": 69,
+    "": "",
+    "IME": "",
+    "PREZIME": "",
+    "GOD.": "",
+    "KLUB": "",
+    "TOTAL": ""
+  },
+  {
+    "KATEGORIJA": "",
+    "": 1,
+    "IME": "PAOLA",
+    "PREZIME": "LOZANČIĆ",
+    "GOD.": 2004,
+    "KLUB": "ADAMAS",
+    "TOTAL": 230
+  },
+  {
+    "KATEGORIJA": "",
+    "": 2,
+    "IME": "MATEA",
+    "PREZIME": "RADIĆ",
+    "GOD.": 2007,
+    "KLUB": "VIROVITICA",
+    "TOTAL": "X"
+  },
+  {
+    "KATEGORIJA": 76,
+    "": "",
+    "IME": "",
+    "PREZIME": "",
+    "GOD.": "",
+    "KLUB": "",
+    "TOTAL": ""
+  },
+  {
+    "KATEGORIJA": "",
+    "": 1,
+    "IME": "MARTA",
+    "PREZIME": "GRGUREV",
+    "GOD.": 2004,
+    "KLUB": "SPIRITUS FORTIS",
+    "TOTAL": "X"
+  },
+  {
+    "KATEGORIJA": "84+",
+    "": "",
+    "IME": "",
+    "PREZIME": "",
+    "GOD.": "",
+    "KLUB": "",
+    "TOTAL": ""
+  },
+  {
+    "KATEGORIJA": "",
+    "": 1,
+    "IME": "MAGDALENA",
+    "PREZIME": "FARINA",
+    "GOD.": 2006,
+    "KLUB": "BODY ART",
+    "TOTAL": "X"
+  }
+]

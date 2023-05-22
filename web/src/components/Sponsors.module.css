@@ -1,0 +1,23 @@
+.sponsors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  align-items: center;
+}
+
+.organizers {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sponsor img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .sponsors {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}

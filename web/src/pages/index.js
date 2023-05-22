@@ -6,6 +6,7 @@ import { competitors } from "@/lib/competitors";
 import { RecordsTable } from "@/components/RecordsTable";
 import { Groups } from "@/components/Groups";
 import { classnames } from "@/lib/util";
+import { Sponsors } from "@/components/Sponsors";
 
 export default function Home() {
   const [bottomClasses, setBottomClasses] = useState([
@@ -241,6 +242,16 @@ export default function Home() {
                 </p>
               </details>
             </div>
+          </div>
+        </section>
+        <section className={styles.section}>
+          <div className="container">
+            <h1 className={styles.sectionTitle}>Sponzori</h1>
+            <Sponsors />
+            <h1 className={styles.sectionTitle} style={{
+              marginTop: "100px"
+            }}>U organizaciji</h1>
+            <Sponsors group={1} />
           </div>
         </section>
       </main>

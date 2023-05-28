@@ -248,9 +248,14 @@ export default function Home() {
           <div className="container">
             <h1 className={styles.sectionTitle}>Sponzori</h1>
             <Sponsors />
-            <h1 className={styles.sectionTitle} style={{
-              marginTop: "100px"
-            }}>U organizaciji</h1>
+            <h1
+              className={styles.sectionTitle}
+              style={{
+                marginTop: "100px",
+              }}
+            >
+              U organizaciji
+            </h1>
             <Sponsors group={1} />
           </div>
         </section>

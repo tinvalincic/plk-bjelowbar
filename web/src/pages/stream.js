@@ -12,6 +12,7 @@ export default function Stream() {
       width: 854,
       height: 480,
       channel: "platforma_hr",
+      allowfullscreen: true,
     });
     initializedTwitch.current = true;
   }, []);
@@ -28,7 +29,7 @@ export default function Stream() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <section className={styles.section}>
+        <section>
           <div id="twitch-embed"></div>
         </section>
         <section className={styles.section}>

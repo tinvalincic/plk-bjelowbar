@@ -46,12 +46,11 @@ a {
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
   #twitch-embed {
     padding-top: 90%;
   }
-
 }

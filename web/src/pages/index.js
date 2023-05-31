@@ -7,6 +7,8 @@ import { RecordsTable } from "@/components/RecordsTable";
 import { Groups } from "@/components/Groups";
 import { classnames } from "@/lib/util";
 import { Sponsors } from "@/components/Sponsors";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [bottomClasses, setBottomClasses] = useState([
@@ -14,6 +16,7 @@ export default function Home() {
   ]);
   const [dateClasses, setDateClasses] = useState([styles.date]);
   const [buttonClasses, setButtonClasses] = useState([styles.bannerButton]);
+  const [streamButtonClasses, setStreamButtonClasses] = useState([styles.streamButton]);
   const initialized = useRef(false);
   const nominations = useRef(null);
 
@@ -31,11 +34,23 @@ export default function Home() {
     setTimeout(() => {
       setButtonClasses([styles.bannerButton, styles.animateButton]);
     }, 3000);
+
+    setTimeout(() => {
+      setStreamButtonClasses([styles.streamButton, styles.animateButton]);
+    }, 3500);
   }, []);
 
   const goToNominations = () => {
     nominations.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const livestreamActive = () => {
+    const dateTimeNow = new Date();
+    const dateTimeStart = new Date("2023-06-03T00:06:30.000Z");
+    const dateTimeEnd = new Date("2023-06-05T00:00:00.000Z");
+    if (dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd) return true;
+    return true
+  }
 
   return (
     <>
@@ -46,6 +61,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        {
+          livestreamActive() &&
+          <Link
+            href="/stream"
+            className={streamButtonClasses.join(" ")}
+          >
+            <Image src="/stream-icon.svg" alt="stream-icon" width={40} height={40} className={styles.animatePulse} />
+            Livestream
+          </Link>
+        }
         <section className={styles.banner}>
           <div className={styles.bannerBackground} />
           <div className={styles.bannerContent}>

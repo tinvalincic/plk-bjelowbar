@@ -57,11 +57,9 @@ export default function Home() {
       <main className={styles.main}>
         {livestreamActive() && (
           <Link href="/stream" className={styles.streamButton}>
-            <Image
+            <img
               src="/stream-icon.svg"
               alt="stream-icon"
-              width={40}
-              height={40}
               className={styles.animatePulse}
             />
             Livestream

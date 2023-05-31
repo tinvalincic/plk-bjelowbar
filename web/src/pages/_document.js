@@ -5,7 +5,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script src="https://embed.twitch.tv/embed/v1.js" />
+        <Script
+          strategy="afterInteractive"
+          src="https://embed.twitch.tv/embed/v1.js"
+        />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-LX6FCV9EQF"

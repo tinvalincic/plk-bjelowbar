@@ -1,13 +1,20 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sponsors } from "@/components/Sponsors";
 
 export default function Stream() {
   const initializedTwitch = useRef(false);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     if (initializedTwitch.current) return;
+    if (!window.Twitch) {
+      setTimeout(() => {
+        setRefresh(!refresh);
+      }, 100);
+      return;
+    }
     new Twitch.Embed("twitch-embed", {
       width: 854,
       height: 480,
@@ -15,7 +22,7 @@ export default function Stream() {
       allowfullscreen: true,
     });
     initializedTwitch.current = true;
-  }, []);
+  }, [refresh]);
 
   return (
     <>

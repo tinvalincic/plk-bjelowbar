@@ -108,7 +108,6 @@
   animation: bannerButton 0.5s ease-in-out;
 }
 
-
 .date::before,
 .date::after {
   opacity: 0;

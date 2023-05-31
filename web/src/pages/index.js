@@ -7,6 +7,8 @@ import { RecordsTable } from "@/components/RecordsTable";
 import { Groups } from "@/components/Groups";
 import { classnames } from "@/lib/util";
 import { Sponsors } from "@/components/Sponsors";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [bottomClasses, setBottomClasses] = useState([
@@ -37,6 +39,13 @@ export default function Home() {
     nominations.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const livestreamActive = () => {
+    const dateTimeNow = new Date();
+    const dateTimeStart = new Date("2023-06-03T00:06:30.000Z");
+    const dateTimeEnd = new Date("2023-06-05T00:00:00.000Z");
+    return dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd;
+  };
+
   return (
     <>
       <Head>
@@ -46,6 +55,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        {livestreamActive() && (
+          <Link href="/stream" className={styles.streamButton}>
+            <Image
+              src="/stream-icon.svg"
+              alt="stream-icon"
+              width={40}
+              height={40}
+              className={styles.animatePulse}
+            />
+            Livestream
+          </Link>
+        )}
         <section className={styles.banner}>
           <div className={styles.bannerBackground} />
           <div className={styles.bannerContent}>

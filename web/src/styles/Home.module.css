@@ -29,6 +29,29 @@
   animation: titleTop 0.5s ease-in-out;
 }
 
+.animatePulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.streamButton {
+  position: fixed;
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  bottom: 30px;
+  right: 30px;
+  margin: 30px auto 0;
+  font-size: 1.3rem;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0px 0px 30px 2px rgb(0 0 0, 0.5);
+}
+
 .bannerButton {
   display: block;
   margin: 30px auto 0;
@@ -250,6 +273,7 @@ p.legenda {
   text-decoration: underline;
 }
 
+
 @keyframes flashWhite {
   0% {
     text-shadow: 0 0 0px #fff;
@@ -263,6 +287,12 @@ p.legenda {
 
   100% {
     text-shadow: 0 0 0px #fff;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
   }
 }
 

@@ -52,6 +52,11 @@
   box-shadow: 0px 0px 30px 2px rgb(0 0 0, 0.5);
 }
 
+.streamButton img {
+  width: 40px;
+  height: auto;
+}
+
 .bannerButton {
   display: block;
   margin: 30px auto 0;

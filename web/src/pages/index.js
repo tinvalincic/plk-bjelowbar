@@ -8,7 +8,6 @@ import { Groups } from "@/components/Groups";
 import { classnames } from "@/lib/util";
 import { Sponsors } from "@/components/Sponsors";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   const [bottomClasses, setBottomClasses] = useState([

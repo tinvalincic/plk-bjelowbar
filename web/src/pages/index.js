@@ -209,17 +209,18 @@ export default function Home() {
             <p>
               Kako bismo povećali atraktivnost natjecanja ove godine uvodimo
               Prime time session. Cilj prime time sessiona je okupiti 8
-              najboljih muških i ženskih natjecatelja u dvije grupe, koji će se
-              međusobno natjecati za titulu najboljeg natjecatelja i
-              natjecateljice Bjelovar Record Breakers 2024. Pravila prime time
-              sessiona su sljedeća:
+              najboljih muških natjecatelja i 8 najboljih ženskih natjecateljica
+              u dvije grupe, koji će se međusobno natjecati za titulu najboljeg
+              natjecatelja i natjecateljice Bjelovar Record Breakers 2024.
+              Pravila prime time sessiona su sljedeća:
             </p>
             <ul>
               <li>
                 U Prime time session ulazi 7 najboljih natjecatelja/ica po GL
                 pointsima prijavljenih u Open kategoriju, te po jedan
                 natjecatelj i natjecateljica koji će biti pozvani od strane
-                organizatora.
+                organizatora. Kao relevantan rezultat za GL points računa se
+                rezultat ostvaren u zadnjih 12 mjeseci na HPLS/IPF natjecanjima.
               </li>
               <li>
                 Natjecatelji unutar Prime time sessiona će ostvariti plasman

@@ -3,15 +3,15 @@ import styles from "./Sponsors.module.css";
 
 const sponsors = [
   [
-    ["eluir.png", "Eluir"],
+    // ["eluir.png", "Eluir"],
     ["supersport_logo.svg", "SuperSport"],
-    ["dynema-power.png", "Dynema Power"],
+    // ["dynema-power.png", "Dynema Power"],
     ["4rce.png", "4RCE"],
-    ["biteme.png", "BiteMe Nutrition"],
-    ["nutricionizam.hr.png", "Nutricionizam.hr"],
-    ["treneraj.png", "Treneraj"],
+    // ["biteme.png", "BiteMe Nutrition"],
+    // ["nutricionizam.hr.png", "Nutricionizam.hr"],
+    // ["treneraj.png", "Treneraj"],
     ["buildup-digital.svg", "Buildup Digital"],
-    ["informal-systems.svg", "Informal Systems"],
+    // ["informal-systems.svg", "Informal Systems"],
   ],
   [
     ["bjelowbar.png", "Bjelowbar"],

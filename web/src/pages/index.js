@@ -9,6 +9,8 @@ import { classnames } from "@/lib/util";
 import { Sponsors } from "@/components/Sponsors";
 import Link from "next/link";
 
+const awards = [700, 400, 200, 125, 75];
+
 export default function Home() {
   const [bottomClasses, setBottomClasses] = useState([
     styles.bannerTitleBottom,
@@ -40,10 +42,12 @@ export default function Home() {
 
   const livestreamActive = () => {
     const dateTimeNow = new Date();
-    const dateTimeStart = new Date("2023-06-03T00:06:30.000Z");
-    const dateTimeEnd = new Date("2023-06-05T00:00:00.000Z");
+    const dateTimeStart = new Date("2024-05-31T00:16:30.000Z");
+    const dateTimeEnd = new Date("2023-06-03T00:00:00.000Z");
     return dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd;
   };
+
+  const showNominations = false;
 
   return (
     <>
@@ -68,16 +72,18 @@ export default function Home() {
           <div className={styles.bannerBackground} />
           <div className={styles.bannerContent}>
             <div className={styles.titleTopWrap}>
-              <h1 className={styles.bannerTitleTop}>1. Bjelovar</h1>
+              <h1 className={styles.bannerTitleTop}>Bjelovar</h1>
             </div>
             <h1 className={bottomClasses.join(" ")}>Record Breakers</h1>
-            <p className={dateClasses.join(" ")}>3. - 4. lipnja 2023.</p>
-            <button
-              className={buttonClasses.join(" ")}
-              onClick={goToNominations}
-            >
-              Pogledaj nominacije
-            </button>
+            <p className={dateClasses.join(" ")}>31.5. - 2.6. 2024.</p>
+            {showNominations && (
+              <button
+                className={buttonClasses.join(" ")}
+                onClick={goToNominations}
+              >
+                Pogledaj nominacije
+              </button>
+            )}
           </div>
         </section>
         <section className={styles.section}>
@@ -86,7 +92,7 @@ export default function Home() {
             <p>
               U suradnji sa SuperSportom osigurali smo nagradni fond u iznosu:
             </p>
-            <div className={styles.fond}>2500 €</div>
+            <div className={styles.fond}>5000 €</div>
             <p>
               Nagradni fond se sastoji od nagrada za top 3 natjecatelja/ice u
               apsolutnom poretku te odvojeni nagradni fond za obaranje
@@ -97,31 +103,29 @@ export default function Home() {
               iznosu:
             </p>
             <div className={styles.apsoluteAwards}>
-              <div className={styles.award}>
-                <div className={styles.medal}>1. mjesto</div>
-                <div className={styles.amount}>250 €</div>
-              </div>
-              <div className={styles.award}>
-                <div className={styles.medal}>2. mjesto</div>
-                <div className={styles.amount}>150 €</div>
-              </div>
-              <div className={styles.award}>
-                <div className={styles.medal}>3. mjesto</div>
-                <div className={styles.amount}>100 €</div>
-              </div>
+              {awards.map((award, i) => (
+                <div className={styles.award} key={award}>
+                  <div className={styles.medal}>{i + 1}. mjesto</div>
+                  <div className={styles.amount}>{award} €</div>
+                </div>
+              ))}
             </div>
             <p>
               Nagradni fond za obaranje seniorskih državnih rekorda* iznosit će:
             </p>
-            <div className={styles.fond}>1500 €</div>
+            <div className={styles.fond}>2000 €</div>
           </div>
         </section>
-        <section className={styles.section} ref={nominations}>
-          <div className="container">
-            <h1 className={styles.sectionTitle}>Nominacije, grupe i satnica</h1>
-            <Groups genderTables={competitors} />
-          </div>
-        </section>
+        {showNominations && (
+          <section className={styles.section} ref={nominations}>
+            <div className="container">
+              <h1 className={styles.sectionTitle}>
+                Nominacije, grupe i satnica
+              </h1>
+              <Groups genderTables={competitors} />
+            </div>
+          </section>
+        )}
         <section className={classnames(styles.section, styles.pravila)}>
           <div className="container">
             <h2 className={styles.sectionTitle}>
@@ -149,7 +153,7 @@ export default function Home() {
                 Državni rekord mora iznositi minimalno 65% svjetskog rekorda kod
                 žena, odnosno 70% svjetskog rekorda kod muškaraca. Relevantni
                 svjetski rekordi koje računamo za kvalifikaciju su rekordi
-                postavljeni do 24.3.2023. (prije sheffielda).
+                postavljeni do 18.3.2023. (nakon Europskog prvenstva).
               </li>
               <li>
                 Natjecatelj/ica mora završiti natjecanje sa totalom koji iznosi
@@ -196,6 +200,34 @@ export default function Home() {
               ostvariti kako bi rekord bio priznat
               <br />
             </p>
+          </div>
+        </section>
+        <section className={classnames(styles.section, styles.primeTime)}>
+          <div className={styles.fog}></div>
+          <div className={classnames("container", styles.container)}>
+            <h1 className={styles.sectionTitle}>prime time session</h1>
+            <p>
+              Kako bismo povećali atraktivnost natjecanja ove godine uvodimo
+              Prime time session. Cilj prime time sessiona je okupiti 8
+              najboljih muških i ženskih natjecatelja u dvije grupe, koji će se
+              međusobno natjecati za titulu najboljeg natjecatelja i
+              natjecateljice Bjelovar Record Breakers 2024. Pravila prime time
+              sessiona su sljedeća:
+            </p>
+            <ul>
+              <li>
+                U Prime time session ulazi 7 najboljih natjecatelja/ica po GL
+                pointsima prijavljenih u Open kategoriju, te po jedan
+                natjecatelj i natjecateljica koji će biti pozvani od strane
+                organizatora.
+              </li>
+              <li>
+                Natjecatelji unutar Prime time sessiona će ostvariti plasman
+                unutar svoje težinske kategorije. Prime time session će biti
+                zadnja grupa Open kategorije, tako da će natjecatelji iz Prime
+                time sessiona imati prednost u odnosu na ostale natjecatelje.
+              </li>
+            </ul>
           </div>
         </section>
         <section className={classnames(styles.section, styles.faqSection)}>
@@ -257,6 +289,19 @@ export default function Home() {
                   kojoj natjecatelj/ica namjerno prijavljuje manje kilaže na
                   pojedine discipline kako bi čuvao snagu za obaranje rekorda u
                   samo jednoj disciplini.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  Zašto ste se odlučili ostaviti jedno mjesto u Prime time
+                  sessionu za poziv od strane organizatora?
+                </summary>
+                <p>
+                  Cilj Prime time sessiona je napraviti dvije atraktivne grupe u
+                  kojima ćemo gledati najbolje natjecatelje/ice. Odlučili smo
+                  ostaviti prostor ako procijenimo da prijavljeni natjecatelj
+                  ima velike šanse oboriti više državnih rekorda u svojoj
+                  kategoriji, a po GL pointsima nije u top 8.
                 </p>
               </details>
             </div>

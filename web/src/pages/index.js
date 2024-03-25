@@ -220,7 +220,8 @@ export default function Home() {
                 pointsima prijavljenih u Open kategoriju, te po jedan
                 natjecatelj i natjecateljica koji će biti pozvani od strane
                 organizatora. Kao relevantan rezultat za GL points računa se
-                rezultat ostvaren u zadnjih 12 mjeseci na HPLS/IPF natjecanjima.
+                najbolji rezultat ostvaren u zadnjih 12 mjeseci na HPLS/IPF
+                natjecanjima.
               </li>
               <li>
                 Natjecatelji unutar Prime time sessiona će ostvariti plasman

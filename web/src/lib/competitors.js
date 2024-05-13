@@ -1,15 +1,49 @@
-import { allCompetitors } from "./all-competitors-bj";
+// import { powerlifting2024 } from "./all-competitors-bj";
+import { powerlifting2024, benchOnly2024 } from "./bj-2024";
 
-function translate(data) {
-  const keys = {
-    __1: "category",
-    __2: "position",
-    __3: "name",
-    "BJELOVAR POWERLIFTING 03.06-04.06.2023.": "lastName",
-    __4: "yearOfBirth",
-    __5: "club",
-    __6: "total",
-  };
+const getKeys = (id) =>
+  [
+    {
+      __1: "category",
+      __2: "position",
+      __3: "name",
+      "BJELOVAR POWERLIFTING": "lastName",
+      __4: "yearOfBirth",
+      __5: "club",
+      __6: "total",
+    },
+    {
+      "BJELOVAR BENCH PRESS": "category",
+      __1: "position",
+      __2: "name",
+      __3: "lastName",
+      __4: "yearOfBirth",
+      __5: "club",
+      __6: "total",
+    },
+  ][id];
+
+const primeTime = [
+  "KARLO MIKEŠIĆ",
+  "WALTER SMAJLOVIĆ",
+  "GORDAN KLASIĆ",
+  "LEONARDO BLAŽEKOVIĆ",
+  "VALENTINO MARAŠ",
+  "BORNA KRALJEVIĆ",
+  "ILIJA PETROVIĆ",
+  "LUKA GREŽINA",
+  "TEUTA JAKUPOVIĆ",
+  "MATEA BUMBA",
+  "MARINELA FRAS",
+  "JELENA IVANČIĆ",
+  "MARIA MAGDALENA GORIČANEC",
+  "MELISA MATULIN",
+  "DORA RINČIĆ",
+  "TARA BAĆE",
+].map((name) => name.toLowerCase());
+
+function translate(data, version) {
+  const keys = getKeys(version);
   return data.map((entry) => {
     return Object.entries(entry).reduce((acc, [key, value]) => {
       if (!keys[key]) return acc;
@@ -70,6 +104,13 @@ function parseData(data) {
       if (!acc[gender][ageCategory][weightCategory]) {
         acc[gender][ageCategory][weightCategory] = [];
       }
+      if (
+        primeTime.includes(
+          `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`
+        )
+      ) {
+        entry.isPrimeTime = true;
+      }
       acc[gender][ageCategory][weightCategory].push(entry);
       return acc;
     },
@@ -80,8 +121,10 @@ function parseData(data) {
   );
 }
 
-const translated = translate(allCompetitors);
+const translated = translate(powerlifting2024, 0);
 export const competitors = parseData(translated);
+const translatedBench = translate(benchOnly2024, 1);
+export const competitorsBench = parseData(translatedBench);
 
 const cat = {
   JUNIOR: "juniors",

@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
 import { recordsMen, recordsWomen } from "@/lib/records";
-import { competitors } from "@/lib/competitors";
+import { competitors, competitorsBench } from "@/lib/competitors";
 import { RecordsTable } from "@/components/RecordsTable";
 import { Groups } from "@/components/Groups";
 import { classnames } from "@/lib/util";
@@ -47,7 +47,8 @@ export default function Home() {
     return dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd;
   };
 
-  const showNominations = false;
+  const showNominations = true;
+  const showGroups = false;
 
   return (
     <>
@@ -122,7 +123,11 @@ export default function Home() {
               <h1 className={styles.sectionTitle}>
                 Nominacije, grupe i satnica
               </h1>
-              <Groups genderTables={competitors} />
+              <Groups
+                genderTables={competitors}
+                benchOnly={competitorsBench}
+                showGroups={false}
+              />
             </div>
           </section>
         )}

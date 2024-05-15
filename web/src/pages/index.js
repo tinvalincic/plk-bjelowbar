@@ -126,7 +126,7 @@ export default function Home() {
               <Groups
                 genderTables={competitors}
                 benchOnly={competitorsBench}
-                showGroups={false}
+                showGroups={true}
               />
             </div>
           </section>

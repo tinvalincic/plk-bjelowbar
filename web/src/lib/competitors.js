@@ -74,6 +74,7 @@ function parseData(data) {
   // each of those will have a value of an array of competitors
   return data.reduce(
     (acc, entry) => {
+      if (!entry.name && !entry.lastName && !entry.category) return acc;
       if (["ŽENE", "MUŠKI"].includes(entry.category)) {
         gender = genders[entry.category];
         return acc;
@@ -93,7 +94,7 @@ function parseData(data) {
       }
       if (
         typeof entry.category === "number" ||
-        ["84+", "120+"].includes(entry.category)
+        ["84+", "120+", "120+ EQ"].includes(entry.category)
       ) {
         weightCategory = entry.category;
         return acc;
@@ -111,6 +112,7 @@ function parseData(data) {
       ) {
         entry.isPrimeTime = true;
       }
+      entry.gender = gender;
       acc[gender][ageCategory][weightCategory].push(entry);
       return acc;
     },

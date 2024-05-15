@@ -3,10 +3,18 @@ import styles from "../RecordsTable.module.css";
 import { classnames } from "@/lib/util";
 import { schedule } from "@/lib/groups";
 
-const genders = {
-  female: "Žene",
-  male: "Muškarci",
-};
+const maleCategories = [
+  "59",
+  "66",
+  "74",
+  "83",
+  "93",
+  "105",
+  "120",
+  "120+",
+  "120+ EQ",
+];
+const femaleCategories = ["47", "52", "57", "63", "69", "76", "84", "84+"];
 
 export const Schedule = ({ genderTables, benchOnly }) => {
   const dataSets = {
@@ -15,7 +23,7 @@ export const Schedule = ({ genderTables, benchOnly }) => {
   };
 
   const getCompetitors = (group) => {
-    if (group.name === "PRIME TIME") {
+    if (group.name.startsWith("PRIME TIME")) {
       return Object.values(dataSets.powerlifting[group.gender].OPEN).flatMap(
         (competitors) => competitors.filter((c) => c.isPrimeTime)
       );
@@ -23,7 +31,8 @@ export const Schedule = ({ genderTables, benchOnly }) => {
     const dataSet = dataSets[group.discipline];
     let competitors = (group.weight ?? [])
       .flatMap((w, i) => {
-        return dataSet[group.gender][group.age[i]]?.[w];
+        const g = maleCategories.includes(w) ? "male" : "female";
+        return dataSet[g][group.age[i]]?.[w];
       })
       .filter(Boolean);
     if (group.take) {
@@ -32,7 +41,9 @@ export const Schedule = ({ genderTables, benchOnly }) => {
     if (group.skip) {
       competitors = competitors.slice(group.skip);
     }
-    competitors = competitors.filter((c) => !c.isPrimeTime);
+    if (group.discipline !== "benchOnly") {
+      competitors = competitors.filter((c) => !c.isPrimeTime);
+    }
     return competitors;
   };
 
@@ -68,12 +79,24 @@ export const Schedule = ({ genderTables, benchOnly }) => {
 
 const Group = ({ group, competitors }) => {
   const [showCompetitors, setShowCompetitors] = useState(false);
-  const grupa = group.name === "PRIME TIME" ? "" : "GRUPA ";
+  const grupa = group.name.startsWith("PRIME TIME") ? "" : "GRUPA ";
+  const benchOnly = group.discipline === "benchOnly" ? " - BENCH PRESS" : "";
+  const isFemale = group.weight?.some((w) => femaleCategories.includes(w))
+    ? "Žene"
+    : "";
+  const isMale = group.weight?.some((w) => maleCategories.includes(w))
+    ? "Muškarci"
+    : "";
+  let gender = [isFemale, isMale].filter((v) => v).join(" / ");
+  if (!gender) {
+    gender = group.name === "PRIME TIME A" ? "Žene" : "Muškarci";
+  }
   return (
     <div>
       <h4>
         {grupa}
-        {group.name} - {genders[group.gender]}
+        {group.name} - {gender}
+        {benchOnly}
       </h4>
       <div className={styles.attributes}>
         <div>Provjera opreme i vaganje</div>

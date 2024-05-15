@@ -64,10 +64,13 @@ export const Nominations = ({
                   let group = tmpGroup;
                   if (Array.isArray(group)) {
                     const [a, b] = group;
-                    group = i + 1 <= a.take ? a : b;
+                    group = i + 1 > a.skip ? a : b;
                   }
                   if (competitor.isPrimeTime) {
-                    group = groupDefinitions.primeTime;
+                    group =
+                      competitor.gender === "male"
+                        ? groupDefinitions.primeTimeM
+                        : groupDefinitions.primeTimeF;
                   }
                   return (
                     <tr

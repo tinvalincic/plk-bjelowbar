@@ -11,16 +11,6 @@ export const powerlifting2024 = [
   },
   {
     "": "",
-    __1: "KATEGORIJA",
-    __2: "",
-    __3: "IME",
-    "BJELOVAR POWERLIFTING": "PREZIME",
-    __4: "GOD.",
-    __5: "KLUB",
-    __6: "TOTAL",
-  },
-  {
-    "": "",
     __1: "ŽENE",
     __2: "",
     __3: "",
@@ -2162,30 +2152,6 @@ export const powerlifting2024 = [
 ];
 
 export const benchOnly2024 = [
-  {
-    "": "",
-    "BJELOVAR BENCH PRESS": "",
-    __1: "",
-    __2: "",
-    __3: "",
-    __4: "",
-    __5: "",
-    __6: "",
-    __7: "",
-    __8: "",
-  },
-  {
-    "": "",
-    "BJELOVAR BENCH PRESS": "KATEGORIJA",
-    __1: "",
-    __2: "IME",
-    __3: "PREZIME",
-    __4: "GOD.",
-    __5: "KLUB",
-    __6: "TOTAL",
-    __7: "",
-    __8: "",
-  },
   {
     "": "",
     "BJELOVAR BENCH PRESS": "ŽENE",

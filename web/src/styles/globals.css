@@ -33,6 +33,10 @@ a {
   padding: 0px 15px;
 }
 
+.yellow {
+  color: var(--color-yellow);
+}
+
 #twitch-embed {
   width: 100%;
   height: 100vh;

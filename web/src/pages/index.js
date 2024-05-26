@@ -239,6 +239,37 @@ export default function Home() {
         </section>
         <section className={classnames(styles.section, styles.faqSection)}>
           <div className="container">
+            <h2 className={styles.sectionTitle}>Lokacija natjecanja</h2>
+            <div className={styles.faqContent}>
+              <div
+                style={{
+                  textAlign: "left",
+                  marginBottom: "20px",
+                  fontSize: "1.2rem",
+                }}
+              >
+                <strong>Adresa:</strong>
+                <br />
+                <a
+                  href="https://maps.app.goo.gl/X5gJ1LC73YNoHPRW6"
+                  target="_blank"
+                >
+                  Sportska dvorana Turističke i ugostiteljske škole
+                  <br />
+                  Poljana dr. Franje Tuđmana 10
+                </a>
+              </div>
+              <iframe
+                src="https://snazzymaps.com/embed/611176"
+                width="100%"
+                height="600px"
+                style={{ border: 0 }}
+              />
+            </div>
+          </div>
+        </section>
+        <section className={classnames(styles.section, styles.faqSection)}>
+          <div className="container">
             <h2 className={styles.sectionTitle}>FAQ</h2>
             <div className={styles.faqContent}>
               <details>

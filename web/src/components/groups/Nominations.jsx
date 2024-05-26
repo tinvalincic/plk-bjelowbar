@@ -66,7 +66,10 @@ export const Nominations = ({
                     const [a, b] = group;
                     group = i + 1 > a.skip ? a : b;
                   }
-                  if (competitor.isPrimeTime) {
+                  if (
+                    competitor.isPrimeTime &&
+                    group?.discipline !== "benchOnly"
+                  ) {
                     group =
                       competitor.gender === "male"
                         ? groupDefinitions.primeTimeM
@@ -90,7 +93,8 @@ export const Nominations = ({
                           <td>{group?.date}</td>
                           <td
                             className={
-                              competitor.isPrimeTime
+                              competitor.isPrimeTime &&
+                              group?.discipline !== "benchOnly"
                                 ? styles.primeTimeGroup
                                 : ""
                             }

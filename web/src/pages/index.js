@@ -237,17 +237,11 @@ export default function Home() {
             </ul>
           </div>
         </section>
-        <section className={classnames(styles.section, styles.faqSection)}>
+        <section className={classnames(styles.section)}>
           <div className="container">
             <h2 className={styles.sectionTitle}>Lokacija natjecanja</h2>
-            <div className={styles.faqContent}>
-              <div
-                style={{
-                  textAlign: "left",
-                  marginBottom: "20px",
-                  fontSize: "1.2rem",
-                }}
-              >
+            <div className={styles.venueContent}>
+              <div className={styles.venueInfo}>
                 <strong>Adresa:</strong>
                 <br />
                 <a

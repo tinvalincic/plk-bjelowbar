@@ -286,9 +286,16 @@ p.legenda {
   padding: 15px;
 }
 
-.faqContent a {
+.faqContent a,
+.venueContent a {
   color: var(--color-yellow);
   text-decoration: underline;
+}
+
+.venueContent .venueInfo {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
 }
 
 .primeTime {

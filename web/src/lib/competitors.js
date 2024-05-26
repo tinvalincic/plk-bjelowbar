@@ -127,29 +127,3 @@ const translated = translate(powerlifting2024, 0);
 export const competitors = parseData(translated);
 const translatedBench = translate(benchOnly2024, 1);
 export const competitorsBench = parseData(translatedBench);
-
-const cat = {
-  JUNIOR: "juniors",
-  "SUB-JUNIOR": "juniors",
-  OPEN: "seniors",
-  "MASTER I": "seniors",
-  "MASTER II": "seniors",
-  "MASTER III": "seniors",
-};
-
-const count = Object.values(competitors).reduce(
-  (acc, ageCategories) => {
-    Object.entries(ageCategories).forEach(([age, weightCategories]) => {
-      acc[cat[age]] += Object.values(weightCategories).reduce((a, w) => {
-        a += w.length;
-        return a;
-      }, 0);
-      return acc;
-    });
-    return acc;
-  },
-  {
-    juniors: 0,
-    seniors: 0,
-  }
-);

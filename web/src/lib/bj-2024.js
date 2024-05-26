@@ -273,16 +273,6 @@ export const powerlifting2024 = [
     "": 16,
     __1: "",
     __2: 3,
-    __3: "HANA",
-    "BJELOVAR POWERLIFTING": "VRESK",
-    __4: "2001.",
-    __5: "BJELOWBAR",
-    __6: 270,
-  },
-  {
-    "": 17,
-    __1: "",
-    __2: 4,
     __3: "ANTEA",
     "BJELOVAR POWERLIFTING": "VOLAREVIĆ",
     __4: "2005.",
@@ -290,9 +280,9 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 18,
+    "": 17,
     __1: "",
-    __2: 5,
+    __2: 4,
     __3: "EMILI",
     "BJELOVAR POWERLIFTING": "LIPOŠĆAK",
     __4: "2002.",
@@ -310,7 +300,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 19,
+    "": 18,
     __1: "",
     __2: 1,
     __3: "VALENTINA",
@@ -340,7 +330,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 20,
+    "": 19,
     __1: "",
     __2: 1,
     __3: "IRA",
@@ -360,7 +350,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 21,
+    "": 20,
     __1: "",
     __2: 1,
     __3: "TEUTA",
@@ -370,7 +360,7 @@ export const powerlifting2024 = [
     __6: 407.5,
   },
   {
-    "": 22,
+    "": 21,
     __1: "",
     __2: 2,
     __3: "MELISA",
@@ -380,7 +370,7 @@ export const powerlifting2024 = [
     __6: 301,
   },
   {
-    "": 23,
+    "": 22,
     __1: "",
     __2: 3,
     __3: "DORA",
@@ -390,7 +380,7 @@ export const powerlifting2024 = [
     __6: 300,
   },
   {
-    "": 24,
+    "": 23,
     __1: "",
     __2: 4,
     __3: "KLARA",
@@ -400,7 +390,7 @@ export const powerlifting2024 = [
     __6: 282.5,
   },
   {
-    "": 25,
+    "": 24,
     __1: "",
     __2: 5,
     __3: "MIRNA",
@@ -410,7 +400,7 @@ export const powerlifting2024 = [
     __6: 277.5,
   },
   {
-    "": 26,
+    "": 25,
     __1: "",
     __2: 6,
     __3: "ANITA",
@@ -420,7 +410,7 @@ export const powerlifting2024 = [
     __6: 265,
   },
   {
-    "": 27,
+    "": 26,
     __1: "",
     __2: 7,
     __3: "VICTORIA MARGIORY",
@@ -430,7 +420,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 28,
+    "": 27,
     __1: "",
     __2: 8,
     __3: "BARBARA",
@@ -440,7 +430,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 29,
+    "": 28,
     __1: "",
     __2: 9,
     __3: "ANTONELA",
@@ -460,7 +450,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 30,
+    "": 29,
     __1: "",
     __2: 1,
     __3: "SUZANA",
@@ -470,7 +460,7 @@ export const powerlifting2024 = [
     __6: 305,
   },
   {
-    "": 31,
+    "": 30,
     __1: "",
     __2: 2,
     __3: "ENIA",
@@ -480,7 +470,7 @@ export const powerlifting2024 = [
     __6: 265,
   },
   {
-    "": 32,
+    "": 31,
     __1: "",
     __2: 3,
     __3: "LUKRECIJA",
@@ -500,7 +490,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 33,
+    "": 32,
     __1: "",
     __2: 1,
     __3: "MATEA",
@@ -510,7 +500,7 @@ export const powerlifting2024 = [
     __6: 420,
   },
   {
-    "": 34,
+    "": 33,
     __1: "",
     __2: 2,
     __3: "MELANIJA",
@@ -520,7 +510,7 @@ export const powerlifting2024 = [
     __6: 325,
   },
   {
-    "": 35,
+    "": 34,
     __1: "",
     __2: 3,
     __3: "NIKOLINA",
@@ -540,7 +530,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 36,
+    "": 35,
     __1: "",
     __2: 1,
     __3: "MARIA MAGDALENA",
@@ -548,6 +538,16 @@ export const powerlifting2024 = [
     __4: "2004.",
     __5: "POZOJ",
     __6: 380,
+  },
+  {
+    "": 36,
+    __1: "",
+    __2: 2,
+    __3: "HANA",
+    "BJELOVAR POWERLIFTING": "VRESK",
+    __4: "2001.",
+    __5: "BJELOWBAR",
+    __6: 270,
   },
   {
     "": "",
@@ -1112,16 +1112,6 @@ export const powerlifting2024 = [
   {
     "": 24,
     __1: "",
-    __2: 4,
-    __3: "MATEO",
-    "BJELOVAR POWERLIFTING": "FIJALA",
-    __4: "2003.",
-    __5: "VIROVITICA",
-    __6: "X",
-  },
-  {
-    "": 25,
-    __1: "",
     __2: 5,
     __3: "BORNA",
     "BJELOVAR POWERLIFTING": "KROG",
@@ -1130,7 +1120,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 26,
+    "": 25,
     __1: "",
     __2: 6,
     __3: "LUKA",
@@ -1140,7 +1130,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 27,
+    "": 26,
     __1: "",
     __2: 7,
     __3: "NOA",
@@ -1160,7 +1150,7 @@ export const powerlifting2024 = [
     __6: "",
   },
   {
-    "": 28,
+    "": 27,
     __1: "",
     __2: 1,
     __3: "FRAN",
@@ -1170,7 +1160,7 @@ export const powerlifting2024 = [
     __6: 620,
   },
   {
-    "": 29,
+    "": 28,
     __1: "",
     __2: 2,
     __3: "MATIJA",
@@ -1180,7 +1170,7 @@ export const powerlifting2024 = [
     __6: 615,
   },
   {
-    "": 30,
+    "": 29,
     __1: "",
     __2: 3,
     __3: "LEON",
@@ -1190,7 +1180,7 @@ export const powerlifting2024 = [
     __6: 605,
   },
   {
-    "": 31,
+    "": 30,
     __1: "",
     __2: 4,
     __3: "MATEJ",
@@ -1200,7 +1190,7 @@ export const powerlifting2024 = [
     __6: 557.5,
   },
   {
-    "": 32,
+    "": 31,
     __1: "",
     __2: 5,
     __3: "MAURO",
@@ -1210,7 +1200,7 @@ export const powerlifting2024 = [
     __6: 540,
   },
   {
-    "": 33,
+    "": 32,
     __1: "",
     __2: 6,
     __3: "LUKA",
@@ -1220,7 +1210,7 @@ export const powerlifting2024 = [
     __6: 500,
   },
   {
-    "": 34,
+    "": 33,
     __1: "",
     __2: 7,
     __3: "ANTONIO",
@@ -1230,7 +1220,7 @@ export const powerlifting2024 = [
     __6: 492.5,
   },
   {
-    "": 35,
+    "": 34,
     __1: "",
     __2: 8,
     __3: "ANDRIJA",
@@ -1240,7 +1230,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 36,
+    "": 35,
     __1: "",
     __2: 9,
     __3: "KARLO",
@@ -1250,7 +1240,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 37,
+    "": 36,
     __1: "",
     __2: 10,
     __3: "FRAN",
@@ -1260,7 +1250,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 38,
+    "": 37,
     __1: "",
     __2: 11,
     __3: "PETAR",
@@ -1270,7 +1260,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 39,
+    "": 38,
     __1: "",
     __2: 12,
     __3: "JONATAN",
@@ -1280,7 +1270,7 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 40,
+    "": 39,
     __1: "",
     __2: 13,
     __3: "VALENTIN",
@@ -1290,13 +1280,23 @@ export const powerlifting2024 = [
     __6: "X",
   },
   {
-    "": 41,
+    "": 40,
     __1: "",
     __2: 14,
     __3: "MARKO",
     "BJELOVAR POWERLIFTING": "BRLEK",
     __4: 2001,
     __5: "ŠTANGA",
+    __6: "X",
+  },
+  {
+    "": 41,
+    __1: "",
+    __2: 15,
+    __3: "MATEO",
+    "BJELOVAR POWERLIFTING": "FIJALA",
+    __4: "2003.",
+    __5: "VIROVITICA",
     __6: "X",
   },
   {
@@ -1981,7 +1981,7 @@ export const powerlifting2024 = [
   },
   {
     "": "",
-    __1: "120+ EQ",
+    __1: "120+",
     __2: "",
     __3: "",
     "BJELOVAR POWERLIFTING": "",

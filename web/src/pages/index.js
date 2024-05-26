@@ -25,15 +25,15 @@ export default function Home() {
     initialized.current = true;
     setTimeout(() => {
       setBottomClasses([styles.bannerTitleBottom, styles.animateBottom]);
-    }, 1000);
+    }, 500);
 
     setTimeout(() => {
       setDateClasses([styles.date, styles.animateDate]);
-    }, 2500);
+    }, 1000);
 
     setTimeout(() => {
       setButtonClasses([styles.bannerButton, styles.animateButton]);
-    }, 3000);
+    }, 1500);
   }, []);
 
   const goToNominations = () => {

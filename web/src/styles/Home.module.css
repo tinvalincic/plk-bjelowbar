@@ -92,7 +92,7 @@
 
 .animateBottom {
   opacity: 1;
-  animation: flashWhite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: flashWhite 1s cubic-bezier(0.22, 0.61, 0.36, 1);
   text-shadow: 0 0 0px #fff;
 }
 

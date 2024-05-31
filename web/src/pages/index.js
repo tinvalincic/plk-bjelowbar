@@ -42,7 +42,7 @@ export default function Home() {
 
   const livestreamActive = () => {
     const dateTimeNow = new Date();
-    const dateTimeStart = new Date("2024-05-31T09:00:00.000Z");
+    const dateTimeStart = new Date("2024-05-31T08:30:00.000Z");
     const dateTimeEnd = new Date("2024-06-03T00:00:00.000Z");
     return dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd;
   };

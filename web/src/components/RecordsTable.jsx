@@ -39,6 +39,7 @@ export const RecordsTable = ({
               discipline === "Total"
                 ? qr
                 : round(wrTotal * qualifyingTotalPercentage);
+            // if (percentage >= qualifyingPercentage * 100) return null;
             return (
               <tr
                 key={cat + discipline}

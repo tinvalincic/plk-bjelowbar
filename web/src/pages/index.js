@@ -16,7 +16,7 @@ export default function Home() {
         liveStreamEnd="2024-06-03T00:00:00.000Z"
         showNominations={false}
         showGroups={false}
-        subtitle="30.5. - 1.6. 2024."
+        subtitle="30.5. - 1.6. 2025."
         pot={7500}
         recordsPot={2500}
         totalPercentageMen={65}

@@ -272,6 +272,13 @@ export const LandingPage = ({
             <h2 className={styles.sectionTitle}>FAQ</h2>
             <div className={styles.faqContent}>
               <details>
+                <summary>Tko može osvojiti novčane nagrade?</summary>
+                <p>
+                  Nagradu mogu osvojiti svi natjecatelji s hrvatskim državljanstvom koji se natječu u
+                  Open kategoriji.
+                </p>
+              </details>
+              <details>
                 <summary>Kako će nagrada biti isplaćena?</summary>
                 <p>
                   Nagrade će biti isplaćene na SuperSport{" "}

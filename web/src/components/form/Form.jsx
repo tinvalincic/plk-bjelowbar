@@ -45,9 +45,9 @@ export function Form() {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
       const response = await postData(data);
-      console.log(response);
       if (Number(response.code) === 0) {
         setShowSuccess(true);
+        return;
       }
       setShowError(true);
     } catch (e) {

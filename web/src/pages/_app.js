@@ -1,5 +1,6 @@
-import '@/styles/globals.css'
+import "keen-slider/keen-slider.min.css";
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }

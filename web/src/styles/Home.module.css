@@ -1,10 +1,14 @@
 .banner {
-  min-height: 100vh;
+  min-height: calc(100vh - 74px);
   background-image: url('/banner.jpeg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+}
+
+.bannerLogo img {
+  width: 700px;
 }
 
 .bannerContent {
@@ -447,6 +451,10 @@ p.legenda {
     font-size: 2rem;
     line-height: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .bannerLogo img {
+    width: 100%;
   }
 
   @keyframes after {

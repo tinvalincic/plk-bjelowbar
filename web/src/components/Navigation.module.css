@@ -1,0 +1,220 @@
+.navigation {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navigation.rbNav {
+  background-color: #151d27;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  width: 80px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  color: #999;
+  text-decoration: none;
+  padding: 10px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.link.active,
+.link:hover {
+  color: #fff;
+  border-bottom-color: var(--color-yellow);
+}
+
+.menuButton {
+  color: #000;
+  background-color: var(--color-yellow);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 0px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.hamburgerWrap {
+  display: none;
+}
+
+.hamburger-container {
+  display: none;
+}
+
+.hamburger {
+  padding: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-yellow);
+  margin: 6px 0;
+}
+
+.mobileNav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobileNav.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNav .navItems {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1f1f1f;
+  width: 80vw;
+  transform: translateX(101%);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  list-style-type: none;
+}
+
+.mobileNav.active .navItems {
+  transform: translateX(0%);
+}
+
+.closeButton {
+  background: transparent;
+  padding: 5px 0px;
+  border: 0px;
+  box-shadow: none;
+  width: 30px;
+  text-align: center;
+}
+
+.closeButton img {
+  display: inline-block;
+}
+
+.containerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.containerFlex.contentTop {
+  padding: 30px 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .mobileMenu {
+    display: block;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+    border-radius: 0px;
+    padding: 18px 20px;
+    text-transform: uppercase;
+  }
+
+  .hamburgerWrap {
+    display: block;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    margin-left: auto;
+    width: 46px;
+    padding: 4px;
+  }
+
+  .hamburgerLine {
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .navigation {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 20px;
+  }
+
+  .mobileNav .navItems {
+    display: block;
+  }
+
+
+  .navItem {
+    display: block;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 25px;
+  }
+
+  .navItem:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hamburgerContainer {
+    display: block;
+  }
+
+  .logo img {
+    width: 70px;
+    height: auto;
+    display: block;
+  }
+
+  .containerFlex {
+    padding: 10px;
+  }
+
+  .navTop {
+    padding: 12px 0px;
+  }
+
+  .navTop .navTopContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navTop .navTopContainer a {
+    margin-left: 0px;
+  }
+
+  .header.sticky .navTop {
+    margin-bottom: 60px;
+  }
+}

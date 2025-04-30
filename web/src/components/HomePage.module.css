@@ -1,0 +1,199 @@
+.banner {
+  background-image: url('/banner.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 80vh;
+}
+
+.bannerBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bannerContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 70%;
+}
+
+.bannerTitle {
+  font-family: 'Teko', sans-serif;
+  font-size: 6rem;
+  line-height: 6rem;
+  color: var(--color-yellow);
+  text-shadow: 2px 10px 14px rgba(0, 0, 0, 0.5);
+}
+
+.bannerSubtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bannerButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.button {
+  background-color: transparent;
+  color: #fff;
+  padding: 14px 24px;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.buttonPrimary {
+  background-color: var(--color-yellow);
+  color: #000;
+  border-color: var(--color-yellow);
+}
+
+.buttonPrimary:hover {
+  background-color: #fcc55a;
+  border-color: #fcc55a;
+}
+
+.section {
+  padding: 100px 20px;
+  background-color: #1f1f1f;
+  overflow-x: hidden;
+}
+
+.sectionContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: var(--color-yellow);
+  margin: 15px auto 0px;
+}
+
+.sectionTitle.noMargin {
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.5rem;
+  color: #b8b8b8;
+}
+
+.sectionText {
+  font-size: 1rem;
+  color: #fff;
+  max-width: 800px;
+  line-height: 1.9rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about {
+  background-image: url("/gym.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.aboutBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.socialNetworks {
+  background-color: #f6a915;
+  padding: 14px 0px;
+}
+
+.socialContent {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  gap: 20px;
+}
+
+.socialTitle {
+  text-align: right;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.socialIcons a {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .bannerContent {
+    width: 100%;
+  }
+
+  .bannerTitle {
+    font-size: 3rem;
+  }
+
+  .socialTitle {
+    font-size: 1.3rem;
+  }
+
+  .socialIcons img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .bannerSubtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+
+  .banner,
+  .about {
+    background-attachment: initial;
+  }
+}

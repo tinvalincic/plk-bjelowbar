@@ -1,0 +1,74 @@
+.form {
+  width: 700px;
+}
+
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  background-color: #2e2e2e;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--color-yellow);
+}
+
+.form textarea {
+  margin-bottom: 40px;
+}
+
+.gridGroup {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.btnSalji {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff !important;
+  margin: 10px 0px;
+}
+
+.errorMessage {
+  background: #f06c6c;
+  border: 1px solid #ff3737;
+}
+
+.successMessage {
+  background: #56b989;
+  border: 1px solid #52a07a;
+}
+
+.sendButton {
+  margin: 0;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .gridGroup {
+    display: block;
+  }
+
+  .form {
+    width: 100%;
+  }
+}

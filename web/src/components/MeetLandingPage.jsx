@@ -41,11 +41,13 @@ export const LandingPage = ({
 
     setTimeout(() => {
       setDateClasses([styles.date, styles.animateDate]);
-    }, 1000);
+    // }, 1000);
+    }, 200);
 
     setTimeout(() => {
       setButtonClasses([styles.bannerButton, styles.animateButton]);
-    }, 1500);
+    // }, 1500);
+    }, 800);
   }, []);
 
   const goToNominations = () => {
@@ -75,10 +77,13 @@ export const LandingPage = ({
         <section className={styles.banner}>
           <div className={styles.bannerBackground} />
           <div className={styles.bannerContent}>
-            <div className={styles.titleTopWrap}>
+            <div className={styles.bannerLogo}>
+              <img src="/RB2025_logo_RGB.png" alt="Record Breakers 2025" />
+            </div>
+            {/* <div className={styles.titleTopWrap}>
               <h1 className={styles.bannerTitleTop}>Bjelovar</h1>
             </div>
-            <h1 className={bottomClasses.join(" ")}>Record Breakers</h1>
+            <h1 className={bottomClasses.join(" ")}>Record Breakers</h1> */}
             <p className={dateClasses.join(" ")}>{subtitle}</p>
             {showNominations && (
               <button
@@ -274,8 +279,8 @@ export const LandingPage = ({
               <details>
                 <summary>Tko može osvojiti novčane nagrade?</summary>
                 <p>
-                  Nagradu mogu osvojiti svi natjecatelji s hrvatskim državljanstvom koji se natječu u
-                  Open kategoriji.
+                  Nagradu mogu osvojiti svi natjecatelji s hrvatskim
+                  državljanstvom koji se natječu u Open kategoriji.
                 </p>
               </details>
               <details>

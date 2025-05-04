@@ -41,12 +41,12 @@ export const LandingPage = ({
 
     setTimeout(() => {
       setDateClasses([styles.date, styles.animateDate]);
-    // }, 1000);
+      // }, 1000);
     }, 200);
 
     setTimeout(() => {
       setButtonClasses([styles.bannerButton, styles.animateButton]);
-    // }, 1500);
+      // }, 1500);
     }, 800);
   }, []);
 
@@ -59,7 +59,7 @@ export const LandingPage = ({
     const dateTimeStart = new Date(liveStreamStart);
     const dateTimeEnd = new Date(liveStreamEnd);
     return dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd;
-  };  
+  };
 
   return (
     <>
@@ -128,9 +128,7 @@ export const LandingPage = ({
         {showNominations && (
           <section className={styles.section} ref={nominations}>
             <div className="container">
-              <h1 className={styles.sectionTitle}>
-                Nominacije, grupe i satnica
-              </h1>
+              <h1 className={styles.sectionTitle}>Nominacije</h1>
               <Groups
                 genderTables={competitors}
                 benchOnly={competitorsBench}

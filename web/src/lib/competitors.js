@@ -1,5 +1,4 @@
-// import { powerlifting2024 } from "./all-competitors-bj";
-import { powerlifting2024, benchOnly2024 } from "./bj-2024";
+import { powerlifting2025, benchOnly2025 } from "./bj-2025";
 
 const getKeys = (id) =>
   [
@@ -21,25 +20,38 @@ const getKeys = (id) =>
       __5: "club",
       __6: "total",
     },
+    {
+      __0: "category",
+      __1: "position",
+      __2: "name",
+      __3: "lastName",
+      __4: "yearOfBirth",
+      __5: "club",
+      __6: "total",
+    },
   ][id];
 
 const primeTime = [
   "KARLO MIKEŠIĆ",
-  "WALTER SMAJLOVIĆ",
-  "GORDAN KLASIĆ",
   "LEONARDO BLAŽEKOVIĆ",
-  "VALENTINO MARAŠ",
-  "BORNA KRALJEVIĆ",
-  "ILIJA PETROVIĆ",
+  "MIRO NOVAKOVIĆ",
+  "MATEJ ŠALIĆ",
+  "LUKA BENŠIĆ",
+  "WILLIAM VIČEVIĆ",
+  "IVAN LOKAS",
+  "ANDREJ ŠVENDA",
+  "PETAR RENDULIĆ",
   "LUKA GREŽINA",
-  "TEUTA JAKUPOVIĆ",
   "MATEA BUMBA",
-  "MARINELA FRAS",
+  "LEA ŽUNIĆ",
+  "NIKOLINA JOSIPOVIĆ",
+  "ANAMARIJA MAMIĆ",
   "JELENA IVANČIĆ",
-  "MARIA MAGDALENA GORIČANEC",
-  "MELISA MATULIN",
+  "KLARA MENDAŠ",
   "DORA RINČIĆ",
-  "TARA BAĆE",
+  "VICTORIA MARGIORY OTRILLA AGAMA",
+  "TAMARA MIJATOVIĆ",
+  "MELANIJA POMPER",
 ].map((name) => name.toLowerCase());
 
 function translate(data, version) {
@@ -55,23 +67,15 @@ function translate(data, version) {
   });
 }
 
-// Function that parses competitors data and organizes it into categories
 function parseData(data) {
-  // data will have category value "ŽENE" or "MUŠKI", if encountered it will be used to set gender
   const genders = {
     ŽENE: "female",
     MUŠKI: "male",
   };
   let gender = "female";
-  // possible values are SUB-JUNIOR, JUNIOR, OPEN, MASTER I, MASTER II and MASTER III. If encountered it will be used to set ageCategory
   let ageCategory = "";
-  // possible values are 43, 47, 52, 57, 63, 72, 84, 84+, 59, 66, 74, 83, 93, 105, 120, 120+. If encountered it will be used to set weightCategory
   let weightCategory = "";
 
-  // return an object that will consist of two values, male and female
-  // each of those will have a value of an object that will consist of age categories
-  // each of those will have a value of an object that will consist of weight categories
-  // each of those will have a value of an array of competitors
   return data.reduce(
     (acc, entry) => {
       if (!entry.name && !entry.lastName && !entry.category) return acc;
@@ -123,7 +127,7 @@ function parseData(data) {
   );
 }
 
-const translated = translate(powerlifting2024, 0);
+const translated = translate(powerlifting2025, 2);
 export const competitors = parseData(translated);
-const translatedBench = translate(benchOnly2024, 1);
+const translatedBench = translate(benchOnly2025, 2);
 export const competitorsBench = parseData(translatedBench);

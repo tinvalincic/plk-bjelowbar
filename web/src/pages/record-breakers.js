@@ -14,9 +14,9 @@ export default function Home() {
       <Navigation navClassname="rbNav" />
       <LandingPage
         awards={[1000, 700, 500, 200, 100]}
-        liveStreamStart="2024-05-31T08:30:00.000Z"
-        liveStreamEnd="2024-06-03T00:00:00.000Z"
-        showNominations={false}
+        liveStreamStart="2024-05-30T08:30:00.000Z"
+        liveStreamEnd="2024-06-02T00:00:00.000Z"
+        showNominations={true}
         showGroups={false}
         subtitle="30.5. - 1.6. 2025."
         pot={7500}

@@ -59,7 +59,7 @@ export const LandingPage = ({
     const dateTimeStart = new Date(liveStreamStart);
     const dateTimeEnd = new Date(liveStreamEnd);
     return dateTimeNow > dateTimeStart && dateTimeNow < dateTimeEnd;
-  };
+  };  
 
   return (
     <>
@@ -134,7 +134,7 @@ export const LandingPage = ({
               <Groups
                 genderTables={competitors}
                 benchOnly={competitorsBench}
-                showGroups={true}
+                showGroups={false}
               />
             </div>
           </section>

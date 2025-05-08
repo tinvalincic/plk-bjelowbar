@@ -92,8 +92,7 @@ export const groupDefinitions = {
     null,
     13,
     null,
-    null,
-    true
+    null
   ),
   primeTimeF: createGroup(
     "PRIME TIME A",

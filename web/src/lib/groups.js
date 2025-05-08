@@ -20,21 +20,22 @@ function createGroup(
   gender,
   take,
   skip,
-  scaleOffset = 0
+  scaleOffset = 0,
+  flip = false
 ) {
   const [startHour, startMinute] = start.split(":").map(Number);
-  const scaleStart = new Date("2024-" + date);
-  const scaleEnd = new Date("2024-" + date);
+  const scaleStart = new Date("2025-" + date);
+  const scaleEnd = new Date("2025-" + date);
   scaleStart.setHours(startHour - 2, startMinute + scaleOffset);
   scaleEnd.setTime(scaleStart.getTime() + 1000 * 60 * 90);
-  const competitionStart = new Date("2024-" + date + "T" + start + "");
-  const competitionEnd = new Date("2024-" + date + "T" + end);
+  const competitionStart = new Date("2025-" + date + "T" + start + "");
+  const competitionEnd = new Date("2025-" + date + "T" + end);
   let ceremony;
   if (ceremonyStart) {
     ceremony = ceremonyStart;
   } else {
     const ceremonyDate = new Date(competitionEnd);
-    ceremonyDate.setMinutes(ceremonyDate.getMinutes() + 15);
+    // ceremonyDate.setMinutes(ceremonyDate.getMinutes() + 15);
     const hours = prependZero(ceremonyDate.getHours());
     const minutes = prependZero(ceremonyDate.getMinutes());
     ceremony = `${hours}:${minutes}`;
@@ -50,90 +51,165 @@ function createGroup(
   if (gender) group.gender = gender;
   if (take) group.take = take;
   if (skip) group.skip = skip;
+  if (flip) group.flip = flip;
   return group;
 }
 
 export const groupDefinitions = {
-  1: createGroup("A", "05-31", "11:00", "15:30"),
-  2: createGroup("B", "05-31", "11:00", "15:30"),
-  3: createGroup("A", "05-31", "16:00", "16:45", "", "benchOnly"),
-  4: createGroup(
-    "B",
-    "05-31",
-    "16:45",
-    "17:30",
-    "",
-    "benchOnly",
+  1: createGroup("A", "05-30", "11:00", "13:45", "", "benchOnly"),
+  2: createGroup("B", "05-30", "11:00", "13:45", "", "benchOnly"),
+  3: createGroup("C", "05-30", "11:00", "13:45", "", "benchOnly"),
+  4: createGroup("A", "05-30", "14:00", "17:45"),
+  5: createGroup("B", "05-30", "14:00", "17:45"),
+  6: createGroup("A", "05-31", "09:00", "11:45"),
+  7: createGroup("B", "05-31", "09:00", "11:45"),
+  8: createGroup("C", "05-31", "12:00", "15:45"),
+  9: createGroup("D", "05-31", "12:00", "15:45"),
+  10: createGroup("E", "05-31", "16:00", "19:45"),
+  11: createGroup("F", "05-31", "16:00", "19:45"),
+  12: createGroup("A", "06-01", "09:00", "11:45", "20:45"),
+  13: createGroup("B", "06-01", "09:00", "11:45", "20:45"),
+  14: createGroup(
+    "C",
+    "06-01",
+    "12:00",
+    "15:45",
+    "20:45",
     null,
     null,
     null,
-    -45
+    3,
+    null,
+    true
   ),
-  5: createGroup("A", "06-01", "09:00", "12:30", "22:00"),
-  6: createGroup("B", "06-01", "09:00", "12:30", "22:00"),
-  7: createGroup("C", "06-01", "12:30", "15:45", "22:00"),
-  8: createGroup("D", "06-01", "12:30", "15:45", "22:00"),
-  9: createGroup("E", "06-01", "15:45", "19:45", "22:00"),
-  10: createGroup("F", "06-01", "15:45", "19:45", "22:00"),
+  15: createGroup(
+    "D",
+    "06-01",
+    "12:00",
+    "15:45",
+    "20:45",
+    null,
+    null,
+    13,
+    null,
+    null,
+    true
+  ),
   primeTimeF: createGroup(
     "PRIME TIME A",
     "06-01",
-    "19:45",
-    "22:00",
-    "22:00",
+    "17:00",
+    "20:45",
+    "20:45",
     null,
     "female"
   ),
   primeTimeM: createGroup(
     "PRIME TIME B",
     "06-01",
-    "19:45",
-    "22:00",
-    "22:00",
+    "17:00",
+    "20:45",
+    "20:45",
     null,
     "male"
   ),
-  13: createGroup("A", "06-02", "10:00", "13:00", "13:00"),
-  14: createGroup("B", "06-02", "10:00", "13:00", "13:00"),
-  15: createGroup("C", "06-02", "13:15", "16:15", "16:15"),
-  16: createGroup("D", "06-02", "13:15", "16:15", "16:15"),
-  17: createGroup("E", "06-02", "16:15", "18:15", "18:15", null, null, null, 7),
-  18: createGroup("F", "06-02", "16:15", "18:15", "18:15", null, null, 7, null),
 };
 
 const groupsByDiscipline = {
   powerlifting: {
     male: {
       "SUB-JUNIOR": {
-        74: 13,
-        83: 13,
-        93: 14,
-        105: 14,
-        "120+": 14,
+        74: 4,
+        83: 4,
+        93: 4,
+        105: 4,
+        "120+": 4,
       },
       JUNIOR: {
-        66: 16,
-        83: 16,
-        93: [17, 18],
-        105: 16,
-        "120+": 16,
+        74: 4,
+        83: 5,
+        93: 8,
+        105: 5,
+        120: 8,
       },
       OPEN: {
-        66: 7,
-        74: 7,
-        83: 8,
-        93: 9,
-        105: 10,
-        120: 8,
-        "120+": 9,
-        "120+ EQ": 10,
+        66: 10,
+        74: 10,
+        83: 14,
+        93: 15,
+        105: 11,
+        120: [14, 15],
+        "120+": 10,
       },
       "MASTER I": {
-        83: 15,
-        93: 15,
-        105: 15,
-        120: 15,
-        "120+": 15,
+        93: 9,
+        105: 9,
+        120: 9,
+      },
+      "MASTER II": {
+        105: 9,
+        120: 9,
+      },
+    },
+    female: {
+      "SUB-JUNIOR": {
+        57: 6,
+        63: 6,
+        69: 6,
+        76: 6,
+      },
+      JUNIOR: {
+        52: 6,
+        63: 6,
+        69: 6,
+        76: 6,
+      },
+      OPEN: {
+        52: 12,
+        57: 12,
+        63: 12,
+        69: 13,
+        76: 13,
+        84: 13,
+        "84+": null,
+      },
+      "MASTER I": {
+        52: 7,
+        63: 7,
+        76: 7,
+        "84+": 7,
+      },
+      "MASTER II": {
+        63: 7,
+        69: 7,
+        "84+": 7,
+      },
+    },
+  },
+  benchOnly: {
+    male: {
+      "SUB-JUNIOR": {
+        93: 2,
+        105: 2,
+        "120+": 2,
+      },
+      JUNIOR: {
+        93: 2,
+        105: 2,
+      },
+      OPEN: {
+        83: 3,
+        93: 3,
+        105: 3,
+        120: 3,
+      },
+      "MASTER I": {
+        93: 2,
+        105: 2,
+        120: 2,
+      },
+      "MASTER III": {
+        120: 2,
       },
     },
     female: {
@@ -141,72 +217,19 @@ const groupsByDiscipline = {
         52: 1,
         57: 1,
         69: 1,
-        "84+": 1,
       },
       JUNIOR: {
+        52: 1,
+        57: 1,
+        76: 1,
+      },
+      OPEN: {
+        52: 1,
         57: 1,
         63: 1,
-        69: 2,
-        76: 2,
-        84: 2,
-      },
-      OPEN: {
-        47: 5,
-        57: 5,
-        63: 5,
-        69: 6,
-        76: 6,
-        84: 6,
-        "84+": 6,
-      },
-      "MASTER I": {
-        52: 2,
-        63: 2,
-        69: 2,
-        "84+": 2,
-      },
-      "MASTER II": {
-        63: 2,
-      },
-    },
-  },
-  benchOnly: {
-    male: {
-      "SUB-JUNIOR": {
-        74: 3,
-        93: 3,
-      },
-      JUNIOR: {
-        93: 3,
-      },
-      OPEN: {
-        66: 4,
-        74: 4,
-        83: 4,
-        93: 4,
-        105: 4,
-        120: 4,
-      },
-      "MASTER I": {
-        93: 4,
-        120: 4,
-      },
-      "MASTER II": {
-        93: 4,
-      },
-    },
-    female: {
-      "SUB-JUNIOR": {
-        52: 3,
-        84: 3,
-      },
-      JUNIOR: {
-        57: 3,
-        63: 3,
-      },
-      OPEN: {
-        52: 3,
-        69: 3,
+        69: 1,
+        76: 1,
+        "84+": 1,
       },
     },
   },
@@ -216,7 +239,11 @@ const setAtributes = (group, age, weight, gender) => {
   if (!group.age) group.age = [];
   group.age.push(age);
   if (!group.weight) group.weight = [];
-  group.weight.push(weight);
+  if (group.flip) {
+    group.weight.unshift(weight);
+  } else {
+    group.weight.push(weight);
+  }
   group.gender = gender;
   if (!group.discipline) group.discipline = "powerlifting";
 };
@@ -227,11 +254,19 @@ Object.entries(groupsByDiscipline).forEach(([_, genderGroup]) => {
       Object.entries(weightCategories).forEach(([weight, group]) => {
         if (Array.isArray(group)) {
           group.forEach((g) => {
-            setAtributes(groupDefinitions[g], age, weight, gender);
+            try {
+              setAtributes(groupDefinitions[g], age, weight, gender);
+            } catch (error) {
+              console.log("Greška 2", genderGroup, gender, age, weight, g);
+            }
           });
           return;
         }
-        setAtributes(groupDefinitions[group], age, weight, gender);
+        try {
+          setAtributes(groupDefinitions[group], age, weight, gender);
+        } catch (error) {
+          console.error("Error", genderGroup, gender, age, weight, group);
+        }
       });
     });
   });

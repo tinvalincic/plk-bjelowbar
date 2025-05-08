@@ -35,6 +35,10 @@ export const Schedule = ({ genderTables, benchOnly }) => {
         return dataSet[g][group.age[i]]?.[w];
       })
       .filter(Boolean);
+    if (group.discipline !== "benchOnly") {
+      competitors = competitors.filter((c) => !c.isPrimeTime);
+    }
+
     if (group.take) {
       competitors = competitors.slice(0, group.take);
     }
@@ -92,7 +96,7 @@ const Group = ({ group, competitors }) => {
     gender = group.name === "PRIME TIME A" ? "Žene" : "Muškarci";
   }
   return (
-    <div>
+    <div className={styles.group}>
       <h4>
         {grupa}
         {group.name} - {gender}

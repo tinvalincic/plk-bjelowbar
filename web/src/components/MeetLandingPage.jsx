@@ -95,6 +95,20 @@ export const LandingPage = ({
             )}
           </div>
         </section>
+        {showNominations && (
+          <section className={styles.section} ref={nominations}>
+            <div className="container">
+              <h1 className={styles.sectionTitle}>
+                Nominacije, grupe i satnica
+              </h1>
+              <Groups
+                genderTables={competitors}
+                benchOnly={competitorsBench}
+                showGroups={true}
+              />
+            </div>
+          </section>
+        )}
         <section className={styles.section}>
           <div className={styles.fog}></div>
           <div className={classnames("container", styles.container)}>
@@ -125,18 +139,6 @@ export const LandingPage = ({
             <div className={styles.fond}>{recordsPot} €</div>
           </div>
         </section>
-        {showNominations && (
-          <section className={styles.section} ref={nominations}>
-            <div className="container">
-              <h1 className={styles.sectionTitle}>Nominacije</h1>
-              <Groups
-                genderTables={competitors}
-                benchOnly={competitorsBench}
-                showGroups={false}
-              />
-            </div>
-          </section>
-        )}
         <section className={classnames(styles.section, styles.pravila)}>
           <div className="container">
             <h2 className={styles.sectionTitle}>
@@ -221,15 +223,14 @@ export const LandingPage = ({
             <h1 className={styles.sectionTitle}>prime time session</h1>
             <p>
               Kako bismo povećali atraktivnost natjecanja i ove godine ćemo
-              imati Prime time session. Cilj prime time sessiona je okupiti 8
-              najboljih muških natjecatelja i 8 najboljih ženskih natjecateljica
-              u dvije grupe, koji će se međusobno natjecati za titulu najboljeg
-              natjecatelja i natjecateljice {meetName}. Pravila prime time
-              sessiona su sljedeća:
+              imati Prime time session. Cilj prime time sessiona je okupiti
+              najbolje hrvatske natjecatelje i natjecateljice u dvije grupe,
+              koji će se međusobno natjecati za titulu najboljeg. Pravila prime
+              time sessiona su sljedeća:
             </p>
             <ul>
               <li>
-                U Prime time session ulazi 7 najboljih natjecatelja/ica po GL
+                U Prime time session ulazi 9 najboljih natjecatelja/ica po GL
                 pointsima prijavljenih u Open kategoriju, te po jedan
                 natjecatelj i natjecateljica koji će biti pozvani od strane
                 organizatora. Kao relevantan rezultat za GL points računa se

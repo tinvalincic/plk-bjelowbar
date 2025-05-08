@@ -45,6 +45,9 @@ export const Nominations = ({
               });
             }
             if (!competitors.length) return null;
+            const primeTimeCount = competitors.filter(
+              (competitor) => competitor.isPrimeTime
+            ).length;
             const tmpGroup = getGroup(activeGender, age, cat, activeDiscipline);
             return (
               <Fragment key={cat + age}>
@@ -64,7 +67,7 @@ export const Nominations = ({
                   let group = tmpGroup;
                   if (Array.isArray(group)) {
                     const [a, b] = group;
-                    group = i + 1 > a.skip ? a : b;
+                    group = i + 1 - primeTimeCount > a.skip ? a : b;
                   }
                   if (
                     competitor.isPrimeTime &&

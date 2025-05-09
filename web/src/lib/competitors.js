@@ -49,7 +49,7 @@ const primeTime = [
   "JELENA IVANČIĆ",
   "KLARA MENDAŠ",
   "DORA RINČIĆ",
-  "VICTORIA MARGIORY OTRILLA AGAMA",
+  "VICTORIA OTRILLA",
   "TAMARA MIJATOVIĆ",
   "MELANIJA POMPER",
 ].map((name) => name.toLowerCase());

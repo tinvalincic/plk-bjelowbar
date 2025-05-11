@@ -78,7 +78,7 @@ export const groupDefinitions = {
     null,
     null,
     null,
-    3,
+    2,
     null,
     true
   ),
@@ -90,7 +90,7 @@ export const groupDefinitions = {
     "20:45",
     null,
     null,
-    13,
+    12,
     null,
     null
   ),

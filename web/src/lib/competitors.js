@@ -48,7 +48,7 @@ const primeTime = [
   "ANAMARIJA MAMIĆ",
   "JELENA IVANČIĆ",
   "KLARA MENDAŠ",
-  "DORA RINČIĆ",
+  "ANTONELA MAHNET",
   "VICTORIA OTRILLA",
   "TAMARA MIJATOVIĆ",
   "MELANIJA POMPER",
@@ -131,22 +131,3 @@ const translated = translate(powerlifting2025, 2);
 export const competitors = parseData(translated);
 const translatedBench = translate(benchOnly2025, 2);
 export const competitorsBench = parseData(translatedBench);
-
-function clearCompetitors(competitors) {
-  return Object.entries(competitors).reduce((acc, [gender, categories]) => {
-    acc[gender] = Object.entries(categories).reduce(
-      (acc, [ageCategory, weights]) => {
-        acc[ageCategory] = Object.entries(weights).reduce(
-          (acc, [weightCategory]) => {
-            acc[weightCategory] = null;
-            return acc;
-          },
-          {}
-        );
-        return acc;
-      },
-      {}
-    );
-    return acc;
-  }, {});
-}

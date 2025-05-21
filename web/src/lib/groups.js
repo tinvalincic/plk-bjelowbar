@@ -230,6 +230,9 @@ const groupsByDiscipline = {
         76: 1,
         "84+": 1,
       },
+      "MASTER II": {
+        "84+": 1,
+      },
     },
   },
 };

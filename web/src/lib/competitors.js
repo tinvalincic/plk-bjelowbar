@@ -131,3 +131,25 @@ const translated = translate(powerlifting2025, 2);
 export const competitors = parseData(translated);
 const translatedBench = translate(benchOnly2025, 2);
 export const competitorsBench = parseData(translatedBench);
+
+// console.log(competitors);
+
+// function countClubs(competitors, defaulAcc = {}) {
+//   return Object.values(competitors).reduce((acc, genders) => {
+//     Object.values(genders).forEach((age) => {
+//       Object.values(age).forEach((weight) => {
+//         weight.forEach((competitor) => {
+//           if (!acc[competitor.club]) {
+//             acc[competitor.club] = 0;
+//           }
+//           acc[competitor.club]++;
+//         });
+//       });
+//     });
+//     return acc;
+//   }, defaulAcc);
+// }
+
+// const count = countClubs(competitors);
+// const countSum = countClubs(competitorsBench, count);
+// console.log(countSum);

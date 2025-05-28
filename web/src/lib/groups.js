@@ -10,7 +10,7 @@ function formatTime(startDate, endDate) {
   return `${startHours}:${startMinutes} - ${endHours}:${endMinutes}`;
 }
 
-function createGroup(
+function createGroup({
   name,
   date,
   start,
@@ -21,8 +21,9 @@ function createGroup(
   take,
   skip,
   scaleOffset = 0,
-  flip = false
-) {
+  flip = false,
+  session,
+}) {
   const [startHour, startMinute] = start.split(":").map(Number);
   const scaleStart = new Date("2025-" + date);
   const scaleEnd = new Date("2025-" + date);
@@ -47,6 +48,7 @@ function createGroup(
     competition: formatTime(competitionStart, competitionEnd),
     ceremony: ceremony,
     discipline,
+    session,
   };
   if (gender) group.gender = gender;
   if (take) group.take = take;
@@ -56,62 +58,143 @@ function createGroup(
 }
 
 export const groupDefinitions = {
-  1: createGroup("A", "05-30", "11:00", "13:45", "", "benchOnly"),
-  2: createGroup("B", "05-30", "11:00", "13:45", "", "benchOnly"),
-  3: createGroup("C", "05-30", "11:00", "13:45", "", "benchOnly"),
-  4: createGroup("A", "05-30", "14:00", "17:45"),
-  5: createGroup("B", "05-30", "14:00", "17:45"),
-  6: createGroup("A", "05-31", "09:00", "11:45"),
-  7: createGroup("B", "05-31", "09:00", "11:45"),
-  8: createGroup("C", "05-31", "12:00", "15:45"),
-  9: createGroup("D", "05-31", "12:00", "15:45"),
-  10: createGroup("E", "05-31", "16:00", "19:45"),
-  11: createGroup("F", "05-31", "16:00", "19:45"),
-  12: createGroup("A", "06-01", "09:00", "11:45", "20:45"),
-  13: createGroup("B", "06-01", "09:00", "11:45", "20:45"),
-  14: createGroup(
-    "C",
-    "06-01",
-    "12:00",
-    "15:45",
-    "20:45",
-    null,
-    null,
-    null,
-    2,
-    null,
-    true
-  ),
-  15: createGroup(
-    "D",
-    "06-01",
-    "12:00",
-    "15:45",
-    "20:45",
-    null,
-    null,
-    12,
-    null,
-    null
-  ),
-  primeTimeF: createGroup(
-    "PRIME TIME A",
-    "06-01",
-    "17:00",
-    "20:45",
-    "20:45",
-    null,
-    "female"
-  ),
-  primeTimeM: createGroup(
-    "PRIME TIME B",
-    "06-01",
-    "17:00",
-    "20:45",
-    "20:45",
-    null,
-    "male"
-  ),
+  1: createGroup({
+    name: "A",
+    date: "05-30",
+    start: "11:00",
+    end: "13:45",
+    discipline: "benchOnly",
+    session: 1,
+  }),
+  2: createGroup({
+    name: "B",
+    date: "05-30",
+    start: "11:00",
+    end: "13:45",
+    discipline: "benchOnly",
+    session: 1,
+  }),
+  3: createGroup({
+    name: "C",
+    date: "05-30",
+    start: "11:00",
+    end: "13:45",
+    discipline: "benchOnly",
+    session: 1,
+  }),
+  4: createGroup({
+    name: "A",
+    date: "05-30",
+    start: "14:00",
+    end: "17:45",
+    session: 2,
+  }),
+  5: createGroup({
+    name: "B",
+    date: "05-30",
+    start: "14:00",
+    end: "17:45",
+    session: 2,
+  }),
+  6: createGroup({
+    name: "A",
+    date: "05-31",
+    start: "09:00",
+    end: "11:45",
+    session: 3,
+  }),
+  7: createGroup({
+    name: "B",
+    date: "05-31",
+    start: "09:00",
+    end: "11:45",
+    session: 3,
+  }),
+  8: createGroup({
+    name: "C",
+    date: "05-31",
+    start: "12:00",
+    end: "15:45",
+    session: 4,
+  }),
+  9: createGroup({
+    name: "D",
+    date: "05-31",
+    start: "12:00",
+    end: "15:45",
+    session: 4,
+  }),
+  10: createGroup({
+    name: "E",
+    date: "05-31",
+    start: "16:00",
+    end: "19:45",
+    session: 5,
+  }),
+  11: createGroup({
+    name: "F",
+    date: "05-31",
+    start: "16:00",
+    end: "19:45",
+    session: 5,
+  }),
+  12: createGroup({
+    name: "A",
+    date: "06-01",
+    start: "09:00",
+    end: "11:45",
+    ceremonyStart: "20:45",
+    session: 6,
+  }),
+  13: createGroup({
+    name: "B",
+    date: "06-01",
+    start: "09:00",
+    end: "11:45",
+    ceremonyStart: "20:45",
+    session: 6,
+  }),
+  14: createGroup({
+    name: "C",
+    date: "06-01",
+    start: "12:00",
+    end: "15:45",
+    ceremonyStart: "20:45",
+    take: null,
+    skip: 2,
+    scaleOffset: null,
+    flip: true,
+    session: 7,
+  }),
+  15: createGroup({
+    name: "D",
+    date: "06-01",
+    start: "12:00",
+    end: "15:45",
+    ceremonyStart: "20:45",
+    take: 12,
+    skip: null,
+    scaleOffset: null,
+    session: 7,
+  }),
+  primeTimeF: createGroup({
+    name: "PRIME TIME A",
+    date: "06-01",
+    start: "17:00",
+    end: "20:45",
+    ceremonyStart: "20:45",
+    gender: "female",
+    session: 8,
+  }),
+  primeTimeM: createGroup({
+    name: "PRIME TIME B",
+    date: "06-01",
+    start: "17:00",
+    end: "20:45",
+    ceremonyStart: "20:45",
+    gender: "male",
+    session: 8,
+  }),
 };
 
 const groupsByDiscipline = {
@@ -220,6 +303,7 @@ const groupsByDiscipline = {
       JUNIOR: {
         52: 1,
         57: 1,
+        69: 1,
         76: 1,
       },
       OPEN: {

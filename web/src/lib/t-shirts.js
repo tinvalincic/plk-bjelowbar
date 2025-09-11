@@ -1,10 +1,10 @@
 export const tShirts = [
-  {
-    name: "Halloween t-shirt",
-    price: 15,
-    img: "tshirt_Helloween.jpg",
-    fit: "oversized",
-  },
+  // {
+  //   name: "Halloween t-shirt",
+  //   price: 15,
+  //   img: "tshirt_Helloween.jpg",
+  //   fit: "oversized",
+  // },
   {
     name: "Classic t-shirt",
     price: 15,

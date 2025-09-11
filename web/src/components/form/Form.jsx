@@ -1,7 +1,7 @@
 import styles from "./form.module.css";
 import { classnames } from "@/lib/util";
 import { useEffect, useState } from "react";
-import homePageStyles from "../HomePage.module.css";
+import homePageStyles from "../home-page/HomePage.module.css";
 
 async function postData(data = {}) {
   const response = await fetch("/contact-form-handler.php", {

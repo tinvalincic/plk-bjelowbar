@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import styles from "../RecordsTable.module.css";
+import styles from "../records-table/RecordsTable.module.css";
 import { classnames } from "@/lib/util";
 import { schedule } from "@/lib/groups";
 
@@ -134,8 +134,7 @@ const Group = ({ group, competitors }) => {
               className={styles.competitor}
               key={competitor.name + competitor.lastName}
             >
-              {i + 1}. {competitor.name.toLowerCase()}{" "}
-              {competitor.lastName.toLowerCase()}
+              {i + 1}. {competitor.name} {competitor.lastName}
             </div>
           ))}
         </div>

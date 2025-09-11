@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
-import { Sponsors } from "@/components/Sponsors";
+import { Sponsors } from "@/components";
 
 export default function Stream() {
   const initializedTwitch = useRef(false);

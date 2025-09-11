@@ -1,4 +1,4 @@
-import styles from "../RecordsTable.module.css";
+import styles from "../records-table/RecordsTable.module.css";
 import { classnames } from "@/lib/util";
 
 export const HeaderButtons = ({

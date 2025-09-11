@@ -116,6 +116,7 @@ function parseData(data) {
       ) {
         entry.isPrimeTime = true;
       }
+      
       entry.gender = gender;
       entry.category = weightCategory;
       acc[gender][ageCategory][weightCategory].push(entry);

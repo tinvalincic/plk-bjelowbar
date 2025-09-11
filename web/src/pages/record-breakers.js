@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { LandingPage } from "@/components/MeetLandingPage";
-import { Navigation } from "@/components/Navigation";
+import { Navigation, LandingPage } from "@/components";
 
 export default function Home() {
   return (

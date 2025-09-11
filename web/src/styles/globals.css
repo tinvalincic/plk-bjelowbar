@@ -17,12 +17,18 @@ body {
   max-width: 100vw;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  background-color: #151d27;
+  background-color: #1f1f1f;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a.page-link {
+  color: var(--color-yellow);
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .container {
@@ -105,4 +111,55 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.title {
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 20px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.title:after {
+  content: "";
+  display: block;
+  width: calc(100% + 8px);
+  height: 10px;
+  background-color: var(--color-yellow);
+  margin-top: -14px;
+  margin-left: -4px;
+}
+
+.subtitle {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.subtitle:after {
+  height: 6px;
+  margin-top: -10px;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-left: 20px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  line-height: 26px;
+}
+
+ul li {
+  line-height: 26px;
+}
+
+@media screen and (max-width: 768px) {
+  .title:after {
+    width: 110px;
+  }
 }

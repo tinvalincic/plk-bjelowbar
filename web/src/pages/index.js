@@ -1,7 +1,6 @@
 import Head from "next/head";
-import { LandingPage } from "@/components/MeetLandingPage";
-import { Navigation } from "@/components/Navigation";
-import { HomePage } from "@/components/HomePage";
+import { Navigation, HomePage } from "@/components";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -14,6 +13,7 @@ export default function Home() {
       </Head>
       <Navigation />
       <HomePage />
+      <Footer />
     </>
   );
 }

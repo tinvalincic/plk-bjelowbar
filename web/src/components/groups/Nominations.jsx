@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import styles from "../RecordsTable.module.css";
+import styles from "../records-table/RecordsTable.module.css";
 import { classnames } from "@/lib/util";
 import { getGroup, groupDefinitions } from "@/lib/groups";
 

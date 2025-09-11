@@ -1,0 +1,24 @@
+.footer {
+  background-color: #1f1f1f;
+  padding: 12px 20px;
+  color: #626262;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.socialIcons {
+  text-align: right;
+}
+
+.socialIcons a {
+  display: inline-block;
+  margin: 0px 2px;
+}
+
+.socialIcons a:last-child {
+  margin-right: 0px;
+}

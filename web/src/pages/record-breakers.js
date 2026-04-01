@@ -13,8 +13,8 @@ export default function Home() {
       <Navigation navClassname="rbNav" />
       <LandingPage
         awards={[1000, 700, 500, 200, 100]}
-        liveStreamStart="2024-05-30T08:30:00.000Z"
-        liveStreamEnd="2024-06-02T00:00:00.000Z"
+        liveStreamStart="2026-06-05T08:30:00.000Z"
+        liveStreamEnd="2026-06-08T00:00:00.000Z"
         showNominations={false}
         showGroups={false}
         subtitle="5.6. - 7.6. 2026."
@@ -24,8 +24,8 @@ export default function Home() {
         totalPercentageWomen={60}
         recordsPercentageMen={75}
         recordsPercentageWomen={70}
-        recordsEndDate="23.3.2025."
-        meetName="Bjelovar Record Breakers 2025"
+        recordsEndDate="23.3.2026."
+        meetName="Bjelovar Record Breakers 2026"
       />
     </>
   );

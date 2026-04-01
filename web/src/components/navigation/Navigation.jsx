@@ -52,7 +52,7 @@ export const Navigation = ({ navClassname = "" }) => {
           ))}
         </div>
         <Link href="/record-breakers" className={styles.menuButton}>
-          RB 2025
+          RB 2026
         </Link>
         <div className={styles.hamburgerWrap}>
           <div className={styles.hamburger} onClick={toggleMobileNav}>

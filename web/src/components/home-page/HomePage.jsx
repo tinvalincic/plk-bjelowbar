@@ -26,7 +26,7 @@ export const HomePage = () => {
                 className={classnames(styles.button, styles.buttonPrimary)}
                 href="/record-breakers"
               >
-                Record Breakers 2025
+                Record Breakers 2026
               </Link>
             </div>
           </div>

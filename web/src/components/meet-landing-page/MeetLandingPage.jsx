@@ -76,7 +76,7 @@ export const LandingPage = ({
           <div className={styles.bannerBackground} />
           <div className={styles.bannerContent}>
             <div className={styles.bannerLogo}>
-              <img src="/RB2025_logo_RGB.png" alt="Record Breakers 2025" />
+              <img src="/rb26.png" alt="Record Breakers 2026" />
             </div>
             {/* <div className={styles.titleTopWrap}>
               <h1 className={styles.bannerTitleTop}>Bjelovar</h1>
@@ -164,7 +164,7 @@ export const LandingPage = ({
                 Državni rekord mora iznositi minimalno {recordsPercentageWomen}%
                 svjetskog rekorda kod žena, odnosno {recordsPercentageMen}%
                 svjetskog rekorda kod muškaraca. Relevantni svjetski rekordi
-                koje računamo za kvalifikaciju su rekordi postavljeni do
+                koje računamo za kvalifikaciju su rekordi postavljeni do{" "}
                 {recordsEndDate} (nakon Europskog prvenstva).
               </li>
               <li>

@@ -228,7 +228,7 @@ export const LandingPage = ({
             </p>
             <ul>
               <li>
-                U Prime time session ulazi 9 najboljih natjecatelja/ica po GL
+                U Prime time session ulazi 7 najboljih natjecatelja/ica po GL
                 pointsima prijavljenih u Open kategoriju, te po jedan
                 natjecatelj i natjecateljica koji će biti pozvani od strane
                 organizatora. Kao relevantan rezultat za GL points računa se

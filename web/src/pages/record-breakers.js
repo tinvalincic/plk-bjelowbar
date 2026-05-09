@@ -15,7 +15,7 @@ export default function Home() {
         awards={[1000, 700, 500, 200, 100]}
         liveStreamStart="2026-06-05T08:30:00.000Z"
         liveStreamEnd="2026-06-08T00:00:00.000Z"
-        showNominations={false}
+        showNominations={true}
         showGroups={false}
         subtitle="5.6. - 7.6. 2026."
         pot={7500}

@@ -23,11 +23,11 @@ export const Schedule = ({ genderTables, benchOnly }) => {
   };
 
   const getCompetitors = (group) => {
-    if (group.name.startsWith("PRIME TIME")) {
-      return Object.values(dataSets.powerlifting[group.gender].OPEN).flatMap(
-        (competitors) => competitors.filter((c) => c.isPrimeTime)
-      );
-    }
+    // if (group.name.startsWith("PRIME TIME")) {
+    //   return Object.values(dataSets.powerlifting[group.gender].OPEN).flatMap(
+    //     (competitors) => competitors.filter((c) => c.isPrimeTime)
+    //   );
+    // }
     const dataSet = dataSets[group.discipline];
     let competitors = (group.weight ?? [])
       .flatMap((w, i) => {

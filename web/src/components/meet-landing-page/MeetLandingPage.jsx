@@ -102,7 +102,7 @@ export const LandingPage = ({
               <Groups
                 genderTables={competitors}
                 benchOnly={competitorsBench}
-                showGroups={true}
+                showGroups={showGroups}
               />
             </div>
           </section>

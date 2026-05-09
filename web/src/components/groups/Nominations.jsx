@@ -84,7 +84,7 @@ export const Nominations = ({
                       onClick={() => setActiveRow(key)}
                       className={activeRow === key ? styles.active : ""}
                     >
-                      <td>{competitor.position}</td>
+                      <td>{i + 1}.</td>
                       <td>
                         {competitor.name} {competitor.lastName}
                       </td>

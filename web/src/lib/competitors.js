@@ -1,4 +1,4 @@
-import { powerlifting2025, benchOnly2025 } from "./bj-2025";
+import { powerlifting2026, benchOnly2026 } from "./bj-2026";
 
 const getKeys = (id) =>
   [
@@ -28,6 +28,14 @@ const getKeys = (id) =>
       __4: "yearOfBirth",
       __5: "club",
       __6: "total",
+    },
+    {
+      __1: "category",
+      "BJELOVAR RECORD BREAKERS 2026": "name",
+      __2: "lastName",
+      __3: "yearOfBirth",
+      __4: "club",
+      __5: "total",
     },
   ][id];
 
@@ -109,13 +117,13 @@ function parseData(data) {
       if (!acc[gender][ageCategory][weightCategory]) {
         acc[gender][ageCategory][weightCategory] = [];
       }
-      if (
-        primeTime.includes(
-          `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`
-        )
-      ) {
-        entry.isPrimeTime = true;
-      }
+      // if (
+      //   primeTime.includes(
+      //     `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`
+      //   )
+      // ) {
+      //   entry.isPrimeTime = true;
+      // }
       
       entry.gender = gender;
       entry.category = weightCategory;
@@ -129,9 +137,9 @@ function parseData(data) {
   );
 }
 
-const translated = translate(powerlifting2025, 2);
+const translated = translate(powerlifting2026, 3);
 export const competitors = parseData(translated);
-const translatedBench = translate(benchOnly2025, 2);
+const translatedBench = translate(benchOnly2026, 3);
 export const competitorsBench = parseData(translatedBench);
 
 function countClubs(competitors, defaulAcc = {}) {

@@ -40,26 +40,22 @@ const getKeys = (id) =>
   ][id];
 
 const primeTime = [
-  "KARLO MIKEŠIĆ",
   "LEONARDO BLAŽEKOVIĆ",
-  "MIRO NOVAKOVIĆ",
+  "JANKO SVETLIK",
+  "LEON PISKAČ",
   "MATEJ ŠALIĆ",
-  "LUKA BENŠIĆ",
-  "WILLIAM VIČEVIĆ",
-  "IVAN LOKAS",
-  "ANDREJ ŠVENDA",
-  "PETAR RENDULIĆ",
-  "LUKA GREŽINA",
-  "MATEA BUMBA",
+  "MIRO NOVAKOVIĆ",
+  "DORIAN MUTAK",
+  "OLIVER OZVAČIĆ",
+  "WALTER SMAJLOVIĆ",
+  "TEUTA JAKUPOVIĆ",
+  "TARA BAĆE",
   "LEA ŽUNIĆ",
-  "NIKOLINA JOSIPOVIĆ",
-  "ANAMARIJA MAMIĆ",
-  "JELENA IVANČIĆ",
-  "KLARA MENDAŠ",
   "ANTONELA MAHNET",
-  "VICTORIA OTRILLA",
-  "TAMARA MIJATOVIĆ",
-  "MELANIJA POMPER",
+  "MELISA MATULIN",
+  "NIKOLINA JOSIPOVIĆ",
+  "KARLA BALIČEVAC",
+  "ANAMARIJA MAMIĆ",
 ].map((name) => name.toLowerCase());
 
 function translate(data, version) {
@@ -117,13 +113,13 @@ function parseData(data) {
       if (!acc[gender][ageCategory][weightCategory]) {
         acc[gender][ageCategory][weightCategory] = [];
       }
-      // if (
-      //   primeTime.includes(
-      //     `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`
-      //   )
-      // ) {
-      //   entry.isPrimeTime = true;
-      // }
+      if (
+        primeTime.includes(
+          `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`
+        )
+      ) {
+        entry.isPrimeTime = true;
+      }
       
       entry.gender = gender;
       entry.category = weightCategory;

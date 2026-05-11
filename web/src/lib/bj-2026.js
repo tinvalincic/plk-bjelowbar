@@ -6416,7 +6416,7 @@ export const benchOnly2026 = [
   },
   {
     "": "",
-    __1: "MASTER 2",
+    __1: "MASTER II",
     "BJELOVAR RECORD BREAKERS 2026": "",
     __2: "",
     __3: "",

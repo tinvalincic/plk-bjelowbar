@@ -14,7 +14,7 @@ const maleCategories = [
   "120+",
   "120+ EQ",
 ];
-const femaleCategories = ["47", "52", "57", "63", "69", "76", "84", "84+"];
+const femaleCategories = ["47", "52", "52 OSI", "57", "63", "69", "76", "84", "84+"];
 
 export const Schedule = ({ genderTables, benchOnly }) => {
   const dataSets = {

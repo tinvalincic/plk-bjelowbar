@@ -217,7 +217,6 @@ const groupsByDiscipline = {
         93: 14,
       },
       JUNIOR: {
-        66: 14,
         74: 14,
         83: 15,
         93: 16,
@@ -247,7 +246,6 @@ const groupsByDiscipline = {
         63: 12,
       },
       JUNIOR: {
-        57: 12,
         63: 12,
         69: 12,
         76: 12,
@@ -270,7 +268,6 @@ const groupsByDiscipline = {
       },
       "MASTER II": {
         69: 13,
-        76: 13,
       },
     },
   },
@@ -292,21 +289,26 @@ const groupsByDiscipline = {
         93: 3,
         105: 3,
         120: 3,
+        "120+": 3,
       },
       "MASTER I": {
         83: 3,
         93: 3,
         105: 3,
+        120: 3,
+      },
+      "MASTER II": {
+        83: 3,
       },
     },
     female: {
       JUNIOR: {
         57: 1,
         63: 1,
-        69: 1,
         76: 1,
       },
       OPEN: {
+        "52 OSI": 1,
         57: 1,
         63: 1,
         84: 1,

@@ -46,12 +46,12 @@ const primeTime = [
   "MATEJ ŠALIĆ",
   "MIRO NOVAKOVIĆ",
   "DORIAN MUTAK",
-  "OLIVER OZVAČIĆ",
+  "LUKŠA ZLOŠILO",
   "WALTER SMAJLOVIĆ",
   "TEUTA JAKUPOVIĆ",
   "TARA BAĆE",
   "LEA ŽUNIĆ",
-  "ANTONELA MAHNET",
+  "TEA TEREZA JELINIĆ",
   "MELISA MATULIN",
   "NIKOLINA JOSIPOVIĆ",
   "KARLA BALIČEVAC",
@@ -102,7 +102,7 @@ function parseData(data) {
       }
       if (
         typeof entry.category === "number" ||
-        ["84+", "120+", "120+ EQ"].includes(entry.category)
+        ["84+", "120+", "120+ EQ", "52 OSI"].includes(entry.category)
       ) {
         weightCategory = entry.category;
         return acc;

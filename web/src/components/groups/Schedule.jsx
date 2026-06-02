@@ -14,7 +14,17 @@ const maleCategories = [
   "120+",
   "120+ EQ",
 ];
-const femaleCategories = ["47", "52", "52 OSI", "57", "63", "69", "76", "84", "84+"];
+const femaleCategories = [
+  "47",
+  "52",
+  "52 OSI",
+  "57",
+  "63",
+  "69",
+  "76",
+  "84",
+  "84+",
+];
 
 export const Schedule = ({ genderTables, benchOnly }) => {
   const dataSets = {
@@ -25,7 +35,7 @@ export const Schedule = ({ genderTables, benchOnly }) => {
   const getCompetitors = (group) => {
     if (group.name.startsWith("PRIME TIME")) {
       return Object.values(dataSets.powerlifting[group.gender].OPEN).flatMap(
-        (competitors) => competitors.filter((c) => c.isPrimeTime)
+        (competitors) => competitors.filter((c) => c.isPrimeTime),
       );
     }
     const dataSet = dataSets[group.discipline];
@@ -95,6 +105,7 @@ const Group = ({ group, competitors }) => {
   if (!gender) {
     gender = group.name === "PRIME TIME A" ? "Žene" : "Muškarci";
   }
+  let count = 0;
   return (
     <div className={styles.group}>
       <h4>
@@ -114,6 +125,7 @@ const Group = ({ group, competitors }) => {
             <div>Kategorije</div>
             <div className={styles.groupCategories}>
               {group.age.map((a, i) => `${a} ${group.weight[i]}`).join(", ")}
+              {group.session === 4 && group.name === "A" && `, Guest lifters`}
             </div>
           </>
         )}
@@ -121,7 +133,7 @@ const Group = ({ group, competitors }) => {
       <button
         className={classnames(
           styles.showCompetitors,
-          showCompetitors ? styles.active : ""
+          showCompetitors ? styles.active : "",
         )}
         onClick={() => setShowCompetitors(!showCompetitors)}
       >
@@ -129,14 +141,21 @@ const Group = ({ group, competitors }) => {
       </button>
       {showCompetitors && (
         <div className={styles.competitors}>
-          {competitors.map((competitor, i) => (
-            <div
-              className={styles.competitor}
-              key={competitor.name + competitor.lastName}
-            >
-              {i + 1}. {competitor.name} {competitor.lastName}
-            </div>
-          ))}
+          {competitors.map((competitor) => {
+            if (competitor.guestLifter) return null;
+            count++;
+            return (
+              <div
+                className={styles.competitor}
+                key={competitor.name + competitor.lastName}
+              >
+                {count}. {competitor.name} {competitor.lastName}
+              </div>
+            );
+          })}
+          {group.session === 4 && group.name === "A" && (
+            <div className={styles.competitor}>8. Šimun Crnomarić</div>
+          )}
         </div>
       )}
     </div>

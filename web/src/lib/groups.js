@@ -100,20 +100,20 @@ export const groupDefinitions = {
     session: 2,
   }),
   6: createGroup({
-    name: "A",
+    name: "C",
     date: "06-05",
     start: "17:00",
     end: "20:45",
-    skip: 8,
+    skip: 7,
     flip: true,
     session: 3,
   }),
   7: createGroup({
-    name: "B",
+    name: "D",
     date: "06-05",
     start: "17:00",
     end: "20:45",
-    take: 8,
+    take: 7,
     session: 3,
   }),
   8: createGroup({
@@ -131,7 +131,7 @@ export const groupDefinitions = {
     session: 4,
   }),
   10: createGroup({
-    name: "D",
+    name: "C",
     date: "06-06",
     start: "12:30",
     end: "16:00",
@@ -139,7 +139,7 @@ export const groupDefinitions = {
     session: 5,
   }),
   11: createGroup({
-    name: "E",
+    name: "D",
     date: "06-06",
     start: "12:30",
     end: "16:00",
@@ -193,7 +193,7 @@ export const groupDefinitions = {
     session: 8,
   }),
   16: createGroup({
-    name: "C",
+    name: "E",
     date: "06-07",
     start: "17:00",
     end: "20:45",
@@ -242,10 +242,8 @@ const groupsByDiscipline = {
       },
     },
     female: {
-      "SUB-JUNIOR": {
-        63: 12,
-      },
       JUNIOR: {
+        57: 12,
         63: 12,
         69: 12,
         76: 12,

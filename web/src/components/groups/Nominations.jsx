@@ -46,7 +46,7 @@ export const Nominations = ({
             }
             if (!competitors.length) return null;
             const primeTimeCount = competitors.filter(
-              (competitor) => competitor.isPrimeTime
+              (competitor) => competitor.isPrimeTime,
             ).length;
             const tmpGroup = getGroup(activeGender, age, cat, activeDiscipline);
             return (
@@ -87,13 +87,16 @@ export const Nominations = ({
                       <td>{i + 1}.</td>
                       <td>
                         {competitor.name} {competitor.lastName}
+                        {!!competitor.guestLifter && " (guest lifter)"}
                       </td>
                       <td>{competitor.yearOfBirth}</td>
                       <td>{competitor.club}</td>
                       <td>{competitor.total}</td>
                       {showGroups && (
                         <>
-                          <td>{group?.date}</td>
+                          <td>
+                            {!!competitor?.guestLifter ? "6.6." : group?.date}
+                          </td>
                           <td
                             className={
                               competitor.isPrimeTime &&
@@ -102,10 +105,18 @@ export const Nominations = ({
                                 : ""
                             }
                           >
-                            {group?.name}
+                            {!!competitor?.guestLifter ? "A" : group?.name}
                           </td>
-                          <td>{group?.scale}</td>
-                          <td>{group?.competition}</td>
+                          <td>
+                            {!!competitor?.guestLifter
+                              ? "7:00 - 8:30"
+                              : group?.scale}
+                          </td>
+                          <td>
+                            {!!competitor?.guestLifter
+                              ? "9:00 - 12:15"
+                              : group?.competition}
+                          </td>
                         </>
                       )}
                     </tr>

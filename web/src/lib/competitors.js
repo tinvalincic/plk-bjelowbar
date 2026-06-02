@@ -36,6 +36,7 @@ const getKeys = (id) =>
       __3: "yearOfBirth",
       __4: "club",
       __5: "total",
+      __6: "guestLifter",
     },
   ][id];
 
@@ -115,12 +116,12 @@ function parseData(data) {
       }
       if (
         primeTime.includes(
-          `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`
+          `${entry.name.toLowerCase()} ${entry.lastName.toLowerCase()}`,
         )
       ) {
         entry.isPrimeTime = true;
       }
-      
+
       entry.gender = gender;
       entry.category = weightCategory;
       acc[gender][ageCategory][weightCategory].push(entry);
@@ -129,7 +130,7 @@ function parseData(data) {
     {
       male: {},
       female: {},
-    }
+    },
   );
 }
 
@@ -157,3 +158,23 @@ function countClubs(competitors, defaulAcc = {}) {
 const count = countClubs(competitors);
 const countSum = countClubs(competitorsBench, count);
 // console.log(countSum);
+
+function countMedals(competitors) {
+  return Object.values(competitors).reduce(
+    (acc, ageCategories) => {
+      Object.values(ageCategories).forEach((weightCategories) =>
+        Object.values(weightCategories).forEach((comps) => {
+          acc.gold++;
+          if (comps.length > 1) {
+            acc.silver++;
+          }
+          if (comps.length > 2) {
+            acc.bronze++;
+          }
+        }),
+      );
+      return acc;
+    },
+    { gold: 0, silver: 0, bronze: 0 },
+  );
+}

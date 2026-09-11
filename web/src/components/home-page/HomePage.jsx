@@ -107,8 +107,7 @@ export const HomePage = () => {
             Postani član
           </h1>
           <p className={styles.subtitle}>
-            Pošalji nam upit i javit ćemo ti se sa detaljima za učlanjenje u
-            klub
+            Pošalji nam upit i odgovorit ćemo u najbržem mogućem roku
           </p>
           <Form />
         </div>

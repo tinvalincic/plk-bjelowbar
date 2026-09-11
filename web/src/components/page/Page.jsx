@@ -3,8 +3,9 @@ import { Navigation } from "../navigation";
 import { PageHeader } from "../page-header";
 import styles from "./Page.module.css";
 import { Footer } from "../footer";
+import classNames from "classnames";
 
-export const Page = ({ title, children }) => (
+export const Page = ({ title, children, smaller }) => (
   <>
     <Head>
       <title>{title} - PLK Bjelowbar</title>
@@ -15,7 +16,11 @@ export const Page = ({ title, children }) => (
     <Navigation />
     <PageHeader title={title} />
     <div className={styles.content}>
-      <div className={styles.container}>{children}</div>
+      <div
+        className={classNames(styles.container, { [styles.smaller]: smaller })}
+      >
+        {children}
+      </div>
     </div>
     <Footer />
   </>

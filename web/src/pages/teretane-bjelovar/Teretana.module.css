@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.grid ul {
+  margin-top: 0px;
+}
+
+.link {
+  color: var(--color-yellow);
+  text-decoration: underline;
+}

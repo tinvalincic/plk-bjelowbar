@@ -117,10 +117,10 @@
 }
 
 .sectionText {
-  font-size: 1rem;
+  font-size: 18px;
+  line-height: 28px;
   color: #fff;
   max-width: 800px;
-  line-height: 1.9rem;
   text-align: center;
   margin-bottom: 70px;
 }

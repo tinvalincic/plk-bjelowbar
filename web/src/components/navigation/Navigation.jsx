@@ -8,9 +8,10 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/", label: "Početna" },
   { href: "o-nama", label: "O nama" },
+  { href: "teretane-bjelovar", label: "Teretana" },
   { href: "podrzi-rad-kluba", label: "Merch" },
   { href: "uclani-se", label: "Postani član" },
-  { href: "#contact", label: "Kontakt" },
+  { href: "/#contact", label: "Kontakt" },
 ];
 
 const NavLink = ({ href, children }) => {

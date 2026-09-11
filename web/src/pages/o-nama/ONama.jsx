@@ -2,7 +2,7 @@ import { Page, Paragraph, Title } from "@/components";
 
 export default function ONama() {
   return (
-    <Page title="O nama">
+    <Page title="O nama" smaller>
       <Title>O PLK Bjelowbar</Title>
       <Paragraph>
         PLK Bjelowbar osnovan je 2021. godine, u skučenim garažnim uvjetima od

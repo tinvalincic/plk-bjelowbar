@@ -40,7 +40,7 @@ export default function UclaniSe() {
       <Title className="subtitle">Dokumenti</Title>
       <Paragraph>
         Kako bismo te registrirali u klub moraš ispuniti pristupnicu, koju možeš
-        preuzeti <DocsLink href="pristupnica.pdf">ovdje</DocsLink>.
+        preuzeti <DocsLink href="pristupnica.docx">ovdje</DocsLink>.
       </Paragraph>
       <Paragraph>
         Osim registracije u klub, članove koji se žele natjecati moramo
